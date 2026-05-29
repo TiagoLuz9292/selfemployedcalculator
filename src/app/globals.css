@@ -52,7 +52,7 @@
   --card-foreground: oklch(0.12 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.12 0 0);
-  --primary: oklch(0.52 0.22 264);
+  --primary: oklch(0.58 0.20 68);
   --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.96 0 0);
   --secondary-foreground: oklch(0.2 0 0);
@@ -63,8 +63,8 @@
   --destructive: oklch(0.58 0.24 27);
   --border: oklch(0.9 0 0);
   --input: oklch(0.9 0 0);
-  --ring: oklch(0.52 0.22 264);
-  --chart-1: oklch(0.52 0.22 264);
+  --ring: oklch(0.58 0.20 68);
+  --chart-1: oklch(0.58 0.20 68);
   --chart-2: oklch(0.6 0.18 150);
   --chart-3: oklch(0.7 0.15 60);
   --chart-4: oklch(0.58 0.24 27);
@@ -72,47 +72,47 @@
   --radius: 0.5rem;
   --sidebar: oklch(0.97 0 0);
   --sidebar-foreground: oklch(0.12 0 0);
-  --sidebar-primary: oklch(0.52 0.22 264);
+  --sidebar-primary: oklch(0.58 0.20 68);
   --sidebar-primary-foreground: oklch(0.99 0 0);
   --sidebar-accent: oklch(0.96 0 0);
   --sidebar-accent-foreground: oklch(0.2 0 0);
   --sidebar-border: oklch(0.9 0 0);
-  --sidebar-ring: oklch(0.52 0.22 264);
+  --sidebar-ring: oklch(0.58 0.20 68);
 }
 
 /* Dark mode — default for this platform */
 .dark {
-  --background: oklch(0.1 0.005 264);
+  --background: oklch(0.1 0.005 68);
   --foreground: oklch(0.96 0 0);
-  --card: oklch(0.13 0.005 264);
+  --card: oklch(0.13 0.005 68);
   --card-foreground: oklch(0.96 0 0);
-  --popover: oklch(0.13 0.005 264);
+  --popover: oklch(0.13 0.005 68);
   --popover-foreground: oklch(0.96 0 0);
-  --primary: oklch(0.62 0.22 264);
+  --primary: oklch(0.78 0.20 68);
   --primary-foreground: oklch(0.1 0 0);
-  --secondary: oklch(0.18 0.005 264);
+  --secondary: oklch(0.18 0.005 68);
   --secondary-foreground: oklch(0.96 0 0);
-  --muted: oklch(0.18 0.005 264);
+  --muted: oklch(0.18 0.005 68);
   --muted-foreground: oklch(0.62 0 0);
-  --accent: oklch(0.18 0.005 264);
+  --accent: oklch(0.18 0.005 68);
   --accent-foreground: oklch(0.96 0 0);
   --destructive: oklch(0.7 0.19 22);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.62 0.22 264);
-  --chart-1: oklch(0.62 0.22 264);
+  --ring: oklch(0.78 0.20 68);
+  --chart-1: oklch(0.78 0.20 68);
   --chart-2: oklch(0.65 0.18 150);
   --chart-3: oklch(0.72 0.15 60);
   --chart-4: oklch(0.7 0.19 22);
   --chart-5: oklch(0.68 0.2 300);
-  --sidebar: oklch(0.13 0.005 264);
+  --sidebar: oklch(0.13 0.005 68);
   --sidebar-foreground: oklch(0.96 0 0);
-  --sidebar-primary: oklch(0.62 0.22 264);
+  --sidebar-primary: oklch(0.78 0.20 68);
   --sidebar-primary-foreground: oklch(0.1 0 0);
-  --sidebar-accent: oklch(0.18 0.005 264);
+  --sidebar-accent: oklch(0.18 0.005 68);
   --sidebar-accent-foreground: oklch(0.96 0 0);
   --sidebar-border: oklch(1 0 0 / 8%);
-  --sidebar-ring: oklch(0.62 0.22 264);
+  --sidebar-ring: oklch(0.78 0.20 68);
 }
 
 @layer base {
@@ -169,7 +169,7 @@
   font-weight: 600;
 }
 .prose-article a {
-  color: oklch(0.62 0.22 264);
+  color: oklch(0.78 0.20 68);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -186,16 +186,16 @@
 .prose-article ul li { list-style-type: disc; }
 .prose-article ol li { list-style-type: decimal; }
 .prose-article blockquote {
-  border-left: 3px solid oklch(0.62 0.22 264);
+  border-left: 3px solid oklch(0.78 0.20 68);
   padding: 0.75rem 1.25rem;
   margin: 1.5rem 0;
-  background: oklch(0.18 0.005 264 / 0.5);
+  background: oklch(0.18 0.005 68 / 0.5);
   border-radius: 0 8px 8px 0;
   color: var(--foreground);
   font-style: italic;
 }
 .prose-article code {
-  background: oklch(0.18 0.005 264);
+  background: oklch(0.18 0.005 68);
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-size: 0.875em;
@@ -203,7 +203,7 @@
   color: var(--foreground);
 }
 .prose-article pre {
-  background: oklch(0.13 0.005 264);
+  background: oklch(0.13 0.005 68);
   border: 1px solid oklch(1 0 0 / 8%);
   border-radius: 10px;
   padding: 1.25rem;
@@ -225,7 +225,7 @@
   -webkit-overflow-scrolling: touch;
 }
 .prose-article thead {
-  background: oklch(0.18 0.005 264 / 0.6);
+  background: oklch(0.18 0.005 68 / 0.6);
 }
 .prose-article th {
   color: var(--foreground);
