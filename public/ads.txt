@@ -1,0 +1,2 @@
+# TODO: Replace with your AdSense publisher ID once approved
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
