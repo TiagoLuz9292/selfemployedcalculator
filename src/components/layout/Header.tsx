@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { siteConfig } from "@/data/site";
-import { Calculator, BarChart2, BookOpen, Menu, X, GitCompareArrows, BookMarked, ChevronDown } from "lucide-react";
+import { Calculator, Briefcase, BookOpen, Menu, X, GitCompareArrows, BookMarked, ChevronDown } from "lucide-react";
 
 // TODO: Replace with the 4-6 most important calculator slugs for this niche.
 // These appear in the desktop nav dropdown under "Calculators".
@@ -36,7 +36,7 @@ export function Header() {
             onClick={() => setOpen(false)}
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-              <BarChart2 className="h-4 w-4 text-primary-foreground" />
+              <Briefcase className="h-4 w-4 text-primary-foreground" />
             </div>
             <span>{siteConfig.name}</span>
           </Link>
