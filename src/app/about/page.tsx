@@ -5,8 +5,8 @@ import { calculators } from "@/data/calculators";
 import { getAllPosts } from "@/lib/content/mdx";
 
 export const metadata: Metadata = {
-  title: "About FreelanceCalc",
-  description: "FreelanceCalc provides 20 free calculators for freelancers and independent contractors — hourly rates, taxes, invoices, and financial planning tools.",
+  title: "About Self Employed Calculator",
+  description: "Self Employed Calculator provides 23 free calculators for freelancers and independent contractors — hourly rates, taxes, invoices, and financial planning tools.",
   robots: { index: true, follow: true },
 };
 
@@ -41,9 +41,9 @@ export default function AboutPage() {
     <div className="container mx-auto max-w-3xl px-4 py-12">
 
       <div className="mb-12">
-        <h1 className="text-3xl font-bold tracking-tight mb-4">About FreelanceCalc</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-4">About Self Employed Calculator</h1>
         <p className="text-muted-foreground leading-relaxed text-base">
-          FreelanceCalc is a free toolkit for freelancers, independent contractors, and consultants.
+          Self Employed Calculator is a free toolkit for freelancers, independent contractors, and consultants.
           It provides 20 calculators covering every financial decision in the freelance lifecycle —
           from setting your first rate to planning for retirement on irregular income.
         </p>
@@ -58,7 +58,7 @@ export default function AboutPage() {
           margin that keeps your business healthy. Without the right tools, most people guess.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          FreelanceCalc makes these calculations instant and shareable. Every tool runs in your
+          Self Employed Calculator makes these calculations instant and shareable. Every tool runs in your
           browser with no data sent anywhere. You can pre-fill inputs and share the URL with a
           client, accountant, or fellow freelancer. It's the toolkit we wished existed when we
           started freelancing.

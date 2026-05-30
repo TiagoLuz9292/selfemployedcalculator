@@ -1,4 +1,4 @@
-# FreelanceCalc — Post Pre-Launch SEO Audit
+# Self Employed Calculator — Post Pre-Launch SEO Audit
 *Written: 2026-05-30 — run after PRE-LAUNCH-PLAN.md was fully executed*
 
 Current state: **95 static pages, build passes, all internal linking done.**
@@ -65,7 +65,7 @@ This audit identifies what can still be improved for maximum SEO quality and fas
 #### 10. Footer disclaimer is a TODO placeholder
 **File:** `src/components/layout/Footer.tsx` (line ~128)
 **Problem:** There's a `{/* TODO: Add a niche-appropriate disclaimer here */}` comment. A financial disclaimer ("not financial advice, for educational purposes only") is important for AdSense approval on financial content.
-**Fix:** Add: "FreelanceCalc provides educational tools only. Nothing on this site constitutes financial, tax, or legal advice. Consult a qualified professional for your specific situation."
+**Fix:** Add: "Self Employed Calculator provides educational tools only. Nothing on this site constitutes financial, tax, or legal advice. Consult a qualified professional for your specific situation."
 
 #### 11. `EducationBlock` TODO — auto-link glossary terms in body text
 **File:** `src/components/content/EducationBlock.tsx`

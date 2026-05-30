@@ -1,4 +1,4 @@
-# Affiliate Program Setup — FreelanceCalc
+# Affiliate Program Setup — Self Employed Calculator
 
 All 5 affiliate links in `src/data/affiliates.ts` are currently placeholder homepage URLs.
 Every click generates zero revenue until replaced with real tracking links.

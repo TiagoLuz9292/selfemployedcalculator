@@ -59,7 +59,7 @@ export default function HomePage() {
               {totalCalcs} Free Tools
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-4">
-              Freelance Calculators — Set Rates, Track Tax, Invoice Clients
+              Self Employed Calculators — Set Rates, Track Tax, Invoice Clients
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
               Free tools for independent contractors: hourly rate, self-employment tax, take-home
@@ -234,9 +234,9 @@ export default function HomePage() {
       <section className="border-t border-border/50">
         <div className="container mx-auto max-w-4xl px-4 py-16">
           <div className="space-y-4">
-            <h2 className="text-xl font-bold">Free Freelance Calculators — Built for Independent Professionals</h2>
+            <h2 className="text-xl font-bold">Free Self Employed Calculators — Built for Independent Professionals</h2>
             <p className="text-muted-foreground leading-relaxed text-sm">
-              FreelanceCalc provides 20 free calculators designed specifically for freelancers, independent
+              Self Employed Calculator provides 23 free tools designed specifically for freelancers, independent
               contractors, and consultants. Whether you're setting your first hourly rate, estimating
               quarterly taxes, or calculating the true profitability of a client, every tool runs instantly
               in your browser with no signup required.

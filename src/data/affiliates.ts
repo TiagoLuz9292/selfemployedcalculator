@@ -1,4 +1,4 @@
-// Add real affiliate URLs after program approval (see PLAN-freelancecalc.md for signup links)
+// Add real affiliate URLs after program approval (see AFFILIATE-SETUP.md for signup links)
 export const affiliateLinks: Record<string, string> = {
   freshbooks: "https://www.freshbooks.com",
   quickbooks: "https://quickbooks.intuit.com",

@@ -3,8 +3,8 @@ import type { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-const SITE_NAME = "FreelanceCalc";
-const SITE_DOMAIN = "freelancecalc.io";
+const SITE_NAME = "Self Employed Calculator";
+const SITE_DOMAIN = "selfemployedcalculator.com";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);

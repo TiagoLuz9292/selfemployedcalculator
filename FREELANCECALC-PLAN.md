@@ -1,4 +1,4 @@
-# FreelanceCalc — Full Plan to Build a Monster
+# Self Employed Calculator — Full Plan to Build a Monster
 *Written: 2026-05-30 | Author: Claude Sonnet 4.6*
 *For Claude sessions: read this before working on freelancecalc. It is the authoritative plan.*
 
@@ -6,7 +6,7 @@
 
 ## Why This Site Can Win
 
-FreelanceCalc targets the freelancer financial tools niche. This is one of the strongest calculator niches on the internet:
+Self Employed Calculator targets the freelancer financial tools niche. This is one of the strongest calculator niches on the internet:
 
 - **Audience size:** 70M+ freelancers in the US, hundreds of millions globally. Enormous vs k8scalc or saascalc.
 - **Search intent is perfect:** "how much tax do I owe as a freelancer" cannot be answered by AI without the user's specific numbers. The calculator IS the answer.
@@ -62,12 +62,12 @@ FreelanceCalc targets the freelancer financial tools niche. This is one of the s
 Goal: Site live, indexed, analytics running, affiliates active.
 
 **Domain:**
-- Keep `freelancecalc.io` — it's clear, descriptive, and memorable. No need to change.
-- Alternative if .io feels too tech: `freelancecalc.com` if available, or `thefreelancecalc.com`.
+- Keep `selfemployedcalculator.com` — it's clear, descriptive, and memorable. No need to change.
+- Alternative if .io feels too tech: `selfemployedcalculator.com` if available, or `theselfemployedcalculator.com`.
 
 **Vercel deployment checklist:**
 ```
-NEXT_PUBLIC_SITE_URL=https://freelancecalc.io
+NEXT_PUBLIC_SITE_URL=https://selfemployedcalculator.com
 NEXT_PUBLIC_ADS_ENABLED=false  (flip to true after AdSense approval)
 INDEXNOW_KEY=<generate a UUID hex key>
 CLARITY_TAG_ID=<get from clarity.microsoft.com>
@@ -93,7 +93,7 @@ CLARITY_TAG_ID=<get from clarity.microsoft.com>
 
 **SEO setup:**
 1. Submit site to Google Search Console
-2. Submit sitemap: `https://freelancecalc.io/sitemap.xml`
+2. Submit sitemap: `https://selfemployedcalculator.com/sitemap.xml`
 3. Add BingSiteAuth.xml to /public/ (get from Bing Webmaster Tools)
 4. Generate IndexNow key UUID, add as env var, create `/public/<key>.txt`
 5. Set up Microsoft Clarity (free heatmaps/recordings — valuable for UX)
@@ -387,7 +387,7 @@ This one page is worth 3 months of work if it ranks.
 
 1. **Don't chase every keyword.** Focus on high-intent, calculator-specific queries. Don't try to rank for "how to become a freelancer" — that's top-of-funnel content that doesn't monetise well.
 
-2. **Don't change the domain.** freelancecalc.io is fine. Domain changes destroy SEO history.
+2. **Don't change the domain.** selfemployedcalculator.com is fine. Domain changes destroy SEO history.
 
 3. **Don't add too many AdSense ad units.** 2–3 well-placed units outperform a site stuffed with ads. Quality over quantity, especially before full approval review.
 
@@ -399,7 +399,7 @@ This one page is worth 3 months of work if it ranks.
 
 ## Summary: The Bet
 
-FreelanceCalc is the highest-potential site in the portfolio. It has the right niche (large audience, high intent, repeat visits), the right content model (calculators that need real user inputs), and the right monetisation mix (AdSense + affiliates). The site is already well-built. What it needs is:
+Self Employed Calculator is the highest-potential site in the portfolio. It has the right niche (large audience, high intent, repeat visits), the right content model (calculators that need real user inputs), and the right monetisation mix (AdSense + affiliates). The site is already well-built. What it needs is:
 
 1. Getting live and indexed immediately
 2. Tax season content in place before September 2026

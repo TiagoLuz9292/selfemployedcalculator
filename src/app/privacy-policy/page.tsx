@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const SITE_NAME = "FreelanceCalc";
+const SITE_NAME = "Self Employed Calculator";
 const CONTACT_EMAIL = "tiagoluz92@gmail.com";
-const SITE_URL = "https://freelancecalc.io";
+const SITE_URL = "https://selfemployedcalculator.com";
 
 const LAST_UPDATED = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 

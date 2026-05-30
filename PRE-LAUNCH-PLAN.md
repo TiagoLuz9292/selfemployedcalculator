@@ -1,4 +1,4 @@
-# FreelanceCalc — Pre-Launch Plan (4 Days Before Domain)
+# Self Employed Calculator — Pre-Launch Plan (4 Days Before Domain)
 *Written: 2026-05-30 | Completed: 2026-05-30 | Use this alongside FREELANCECALC-PLAN.md*
 
 **STATUS: ALL 4 DAYS COMPLETE ✅ — committed 79f1b8a, pushed to master**
@@ -54,17 +54,17 @@
 
 ## Still to do when domain arrives (Phase 0 checklist)
 
-- [ ] Purchase domain (freelancecalc.io or alternative)
+- [ ] Purchase domain (selfemployedcalculator.com or alternative)
 - [ ] Create Vercel project, connect GitHub repo
 - [ ] Set environment variables in Vercel:
   ```
-  NEXT_PUBLIC_SITE_URL=https://freelancecalc.io
+  NEXT_PUBLIC_SITE_URL=https://selfemployedcalculator.com
   NEXT_PUBLIC_ADS_ENABLED=false
   INDEXNOW_KEY=<generate UUID hex>
   CLARITY_TAG_ID=<from clarity.microsoft.com>
   ```
 - [ ] Verify domain, wait for DNS propagation
-- [ ] Submit sitemap to Google Search Console: `https://freelancecalc.io/sitemap.xml`
+- [ ] Submit sitemap to Google Search Console: `https://selfemployedcalculator.com/sitemap.xml`
 - [ ] Add BingSiteAuth.xml to /public/, submit to Bing Webmaster Tools
 - [ ] Generate IndexNow key, add as env var, create `/public/<key>.txt`
 - [ ] Apply to AdSense (publisher ID → layout.tsx)

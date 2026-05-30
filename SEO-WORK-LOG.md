@@ -1,4 +1,4 @@
-# SEO Work Log — FreelanceCalc
+# SEO Work Log — Self Employed Calculator
 
 Chronological record of all SEO improvements applied post-launch.
 

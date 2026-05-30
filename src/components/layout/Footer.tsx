@@ -126,7 +126,7 @@ export function Footer() {
             </Link>
             <span className="text-xs text-muted-foreground">·</span>
             <p className="text-xs text-muted-foreground">
-              FreelanceCalc provides educational tools only. Nothing on this site constitutes financial, tax, or legal advice. Consult a qualified professional for your specific situation.
+              Self Employed Calculator provides educational tools only. Nothing on this site constitutes financial, tax, or legal advice. Consult a qualified professional for your specific situation.
             </p>
           </div>
         </div>

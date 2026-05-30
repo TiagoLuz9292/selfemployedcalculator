@@ -59,7 +59,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
     url: `${siteConfig.url}/glossary/${entry.slug}`,
     inDefinedTermSet: {
       "@type": "DefinedTermSet",
-      name: "FreelanceCalc Glossary",
+      name: "Self Employed Calculator Glossary",
       url: `${siteConfig.url}/glossary`,
     },
   };
