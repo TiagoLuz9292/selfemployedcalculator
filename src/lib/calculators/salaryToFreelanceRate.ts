@@ -14,8 +14,9 @@ export function calcSalaryToFreelanceRate(inputs: CalculatorInputs): CalculatorR
   const workingWeeks = Math.max(1, 52 - vacationWeeks);
   const billableHoursPerYear = billableHoursPerWeek * workingWeeks;
 
-  // SE tax adds ~14.1% to effective cost vs employee (employer pays half of 15.3%)
-  const seTaxExtra = annualSalary * 0.0765;
+  // As a freelancer you pay the employer's 7.65% FICA share yourself.
+  // SE tax applies to 92.35% of earnings, so the true extra cost is salary × 0.0765 × 0.9235.
+  const seTaxExtra = annualSalary * 0.0765 * 0.9235;
   const targetRevenue = totalCompensation + seTaxExtra + overheadExpenses;
   const breakEvenRate = billableHoursPerYear > 0 ? targetRevenue / billableHoursPerYear : 0;
   const recommendedRate = breakEvenRate * (1 + profitBuffer / 100);
@@ -33,7 +34,7 @@ export function calcSalaryToFreelanceRate(inputs: CalculatorInputs): CalculatorR
       value: fmtRate(recommendedRate),
       highlighted: true,
       color: "success",
-      description: `Matches your salary equivalent plus ${profitBuffer}% profit buffer`,
+      description: `Matches your full employee compensation plus ${profitBuffer}% profit buffer`,
     },
     {
       id: "break-even-rate",
@@ -41,13 +42,13 @@ export function calcSalaryToFreelanceRate(inputs: CalculatorInputs): CalculatorR
       value: fmtRate(breakEvenRate),
       highlighted: true,
       color: "warning",
-      description: "Minimum rate to match your full employee compensation",
+      description: "Minimum rate to replace your total employee compensation (no profit buffer)",
     },
     {
       id: "employed-hourly",
       label: "Equivalent Employee Rate",
       value: fmtRate(equivalentHourlyEmployed),
-      description: "Your salary ÷ 2,080 hrs — what you appear to earn per hour as employee",
+      description: "Salary ÷ 2,080 hrs — what you appear to earn per hour as an employee (misleadingly low)",
     },
     {
       id: "target-revenue",
@@ -65,7 +66,7 @@ export function calcSalaryToFreelanceRate(inputs: CalculatorInputs): CalculatorR
       id: "se-tax-extra",
       label: "Extra SE Tax vs Employee",
       value: fmt(seTaxExtra),
-      description: "The 7.65% employer share you now pay yourself",
+      description: "The 7.65% employer FICA share you now pay yourself (applied to 92.35% of earnings)",
     },
   ];
 }

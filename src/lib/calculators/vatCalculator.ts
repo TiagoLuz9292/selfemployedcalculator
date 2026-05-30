@@ -24,14 +24,20 @@ export function calcVatCalculator(inputs: CalculatorInputs): CalculatorResult[] 
   const fmt = (n: number, dec = 2) =>
     `$${n.toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec })}`;
 
+  const vatDescription = calcMode === "add-vat"
+    ? `${vatRate}% of net amount added`
+    : `${vatRate}% extracted from gross — net is what you keep`;
+
   return [
     {
       id: "gross-amount",
-      label: calcMode === "add-vat" ? "Total (incl. VAT)" : "Gross Amount Entered",
+      label: calcMode === "add-vat" ? "Invoice Total (incl. VAT)" : "Gross Amount Entered",
       value: fmt(grossAmount),
       highlighted: true,
       color: "success",
-      description: `Amount including ${vatRate}% VAT`,
+      description: calcMode === "add-vat"
+        ? `Net amount plus ${vatRate}% VAT — this is what you invoice the client`
+        : `The gross amount you entered (VAT included)`,
     },
     {
       id: "vat-amount",
@@ -39,13 +45,15 @@ export function calcVatCalculator(inputs: CalculatorInputs): CalculatorResult[] 
       value: fmt(vatAmount),
       highlighted: true,
       color: "warning",
-      description: `${vatRate}% of net amount`,
+      description: vatDescription,
     },
     {
       id: "net-amount",
       label: "Net Amount (excl. VAT)",
       value: fmt(netAmount),
-      description: "Amount before VAT",
+      description: calcMode === "add-vat"
+        ? "Your fee before VAT — the amount you earn"
+        : "The net fee after removing VAT — the amount you earn",
     },
   ];
 }

@@ -26,7 +26,7 @@ export const calculators: CalculatorMeta[] = [
         unit: "$",
         min: 0,
         defaultValue: 80000,
-        helpText: "Your target take-home before taxes (add ~30-35% to account for taxes)",
+        helpText: "Your gross income target. If you want $60,000 after taxes, add ~30-35% and enter ~$80,000–$90,000 here.",
       },
       {
         id: "billableHoursPerWeek",
@@ -74,7 +74,7 @@ export const calculators: CalculatorMeta[] = [
       {
         question: "How do I calculate my freelance hourly rate?",
         answer:
-          "Add your desired annual income plus overhead expenses, then divide by your annual billable hours. Adjust upward by your desired profit margin. For example: ($80,000 + $5,000) / 1,440 hours × 1.20 profit = ~$71/hr.",
+          "Add your desired annual income plus overhead expenses, then divide by (1 − profit margin) to get your revenue target, then divide by annual billable hours. For example: ($80,000 + $5,000) / (1 − 0.20) / 1,440 hours = ~$73.78/hr.",
       },
       {
         question: "Should I factor in taxes when setting my rate?",
@@ -524,7 +524,7 @@ Value-based pricing requires confidence and track record. Start by applying it t
       {
         question: "How accurate is this calculator?",
         answer:
-          "It provides a reasonable estimate using 2024 single-filer federal brackets. Your actual tax depends on filing status, additional deductions, credits, and state-specific rules. Always consult a tax professional for your actual return.",
+          "It provides a reasonable estimate using current single-filer federal brackets with the standard deduction applied. Your actual tax depends on filing status, additional deductions, credits, and state-specific rules. Always consult a tax professional for your actual return.",
       },
       {
         question: "Do I owe SE tax if I only made a small amount freelancing?",
@@ -562,10 +562,20 @@ The most effective way to reduce SE tax is through legitimate business deduction
     fields: [
       { id: "grossIncome", label: "Gross Freelance Income", type: "number", unit: "$", min: 0, defaultValue: 80000, helpText: "Total client payments received" },
       { id: "businessExpenses", label: "Annual Business Expenses", type: "number", unit: "$", min: 0, defaultValue: 10000, helpText: "Software, equipment, home office, insurance, etc." },
-      { id: "federalTaxRate", label: "Estimated Federal Tax Rate", type: "number", unit: "%", min: 0, max: 37, defaultValue: 22, helpText: "Your marginal federal rate: 12% (<$47k), 22% (<$100k), 24% (<$192k)" },
+      {
+        id: "filingStatus",
+        label: "Filing Status",
+        type: "select",
+        options: [
+          { label: "Single", value: "single" },
+          { label: "Married Filing Jointly", value: "married" },
+        ],
+        defaultValue: "single",
+        helpText: "Married filers have higher bracket thresholds and a larger standard deduction.",
+      },
       { id: "stateTaxRate", label: "State Income Tax Rate", type: "number", unit: "%", min: 0, max: 15, defaultValue: 5, helpText: "0% for no-income-tax states (TX, FL, WA), ~9-13% for CA/NY" },
-      { id: "healthInsurance", label: "Monthly Health Insurance", type: "number", unit: "$/mo", min: 0, defaultValue: 400, helpText: "Self-paid health insurance premium per month" },
-      { id: "retirementContribution", label: "Monthly Retirement Contribution", type: "number", unit: "$/mo", min: 0, defaultValue: 500, helpText: "Monthly contributions to SEP-IRA, Solo 401k, etc." },
+      { id: "healthInsurance", label: "Monthly Health Insurance", type: "number", unit: "$/mo", min: 0, defaultValue: 400, helpText: "Self-paid health insurance premium — deducted pre-tax, reducing your taxable income" },
+      { id: "retirementContribution", label: "Monthly Retirement Contribution", type: "number", unit: "$/mo", min: 0, defaultValue: 500, helpText: "SEP-IRA, Solo 401k, etc. — deducted pre-tax, reducing your taxable income" },
     ],
     relatedSlugs: ["self-employment-tax-calculator", "quarterly-tax-calculator", "profit-margin-calculator"],
     relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
@@ -634,7 +644,7 @@ Health insurance is the second major variable. Employer-sponsored coverage is of
       {
         question: "When are quarterly tax payments due?",
         answer:
-          "Q1: April 15 | Q2: June 15 | Q3: September 15 | Q4: January 15 of the following year. Missing these dates triggers an underpayment penalty, currently around 8% annually on the unpaid amount.",
+          "Q1: April 15 | Q2: June 16 | Q3: September 15 | Q4: January 15 of the following year. When a standard date falls on a weekend or holiday it shifts to the next business day. Missing these dates triggers an underpayment penalty, currently around 8% annually on the unpaid amount.",
       },
       {
         question: "What is the safe harbor rule for quarterly taxes?",
@@ -1496,7 +1506,7 @@ For 2026: $15,000 (single) or $30,000 (married filing jointly). This significant
 
 **Why the "Set Aside 25-30%" Rule Works**
 
-For a single filer earning $75,000 in 1099 income with $5,000 in expenses: SE tax ≈ $9,700, federal income tax ≈ $7,300, and average state tax ≈ $3,500. Total: ~$20,500 on $75,000 = 27% effective rate. Setting aside 30% gives a ~$2,000 buffer.`,
+For a single filer earning $75,000 in 1099 income with $5,000 in expenses (5% state tax): SE tax ≈ $9,891, federal income tax ≈ $5,926 (after standard deduction), state tax ≈ $3,253. Total: ~$19,070 on $75,000 = ~25.4% effective rate. Setting aside 30% gives a solid buffer for most situations.`,
     },
   },
 
@@ -1616,7 +1626,7 @@ You don't bill 40 hours per week as a freelancer. Plan for 25-30 billable hours.
 
 Take total compensation you need to replace → add SE tax extra → add business overhead → divide by realistic billable hours. The result is your break-even rate. Add 15-25% for profit and slow-month buffer.
 
-For a $80,000 salary: total replacement target ≈ $108,000 / 1,560 billable hours = **$69/hr minimum**. The $38/hr you calculated from salary ÷ 2,080 would leave you earning less than you did as an employee.`,
+For an $80,000 salary with $12,000 in employer benefits and 30 billable hours/week: total replacement target ≈ $101,652 / 1,440 billable hours = **~$70.59/hr break-even**, or **~$84.71/hr with a 20% profit buffer**. The $38/hr you calculated from salary ÷ 2,080 would leave you earning significantly less than you did as an employee.`,
     },
   },
 
@@ -1680,7 +1690,17 @@ For a $80,000 salary: total replacement target ≈ $108,000 / 1,560 billable hou
         unit: "$",
         min: 0,
         defaultValue: 60,
-        helpText: "Full bill — the home office % is deductible",
+        helpText: "Your monthly internet bill — a separate business-use % field below determines the deductible amount",
+      },
+      {
+        id: "internetBizPct",
+        label: "Internet Business Use",
+        type: "number",
+        unit: "%",
+        min: 0,
+        max: 100,
+        defaultValue: 70,
+        helpText: "Percentage of your internet use that is for business. 70-90% is typical for a full-time home-based freelancer.",
       },
       {
         id: "phoneMonthly",

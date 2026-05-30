@@ -1,20 +1,23 @@
 import type { CalculatorInputs, CalculatorResult } from "@/types/calculator";
 
+// 2025 single-filer brackets — update to 2026 values from irs.gov/newsroom once available
 function approximateFederalTax(taxableIncome: number): number {
   if (taxableIncome <= 0) return 0;
-  // 2024 single filer brackets (approximate)
-  let tax = 0;
   const brackets = [
-    { limit: 11600,  rate: 0.10 },
-    { limit: 47150,  rate: 0.12 },
-    { limit: 100525, rate: 0.22 },
-    { limit: 191950, rate: 0.24 },
-    { limit: 243725, rate: 0.32 },
-    { limit: 609350, rate: 0.35 },
+    { limit: 11925,   rate: 0.10 },
+    { limit: 48475,   rate: 0.12 },
+    { limit: 103350,  rate: 0.22 },
+    { limit: 197300,  rate: 0.24 },
+    { limit: 250525,  rate: 0.32 },
+    { limit: 626350,  rate: 0.35 },
     { limit: Infinity, rate: 0.37 },
   ];
-  let remaining = taxableIncome;
+  // 2025 single standard deduction — update to 2026 value from irs.gov/newsroom
+  const STANDARD_DEDUCTION = 15000;
+  const agi = Math.max(0, taxableIncome - STANDARD_DEDUCTION);
+  let tax = 0;
   let prev = 0;
+  let remaining = agi;
   for (const { limit, rate } of brackets) {
     const slice = Math.min(remaining, limit - prev);
     if (slice <= 0) break;
@@ -61,13 +64,13 @@ export function calcSelfEmploymentTax(inputs: CalculatorInputs): CalculatorResul
       value: fmt(takeHome),
       highlighted: true,
       color: takeHome > 0 ? "success" : "danger",
-      description: "After expenses, SE tax, federal, and state tax",
+      description: "After expenses, SE tax, federal, and state income tax",
     },
     {
       id: "federal-tax",
       label: "Federal Income Tax",
       value: fmt(federalTax),
-      description: "Estimated using 2024 single filer brackets",
+      description: "Estimated using 2025 single-filer brackets with standard deduction",
     },
     {
       id: "state-tax",
@@ -79,7 +82,7 @@ export function calcSelfEmploymentTax(inputs: CalculatorInputs): CalculatorResul
       id: "total-tax",
       label: "Total Tax Burden",
       value: fmt(totalTax),
-      description: "SE tax + federal + state combined",
+      description: "SE tax + federal income tax + state income tax",
     },
     {
       id: "effective-rate",

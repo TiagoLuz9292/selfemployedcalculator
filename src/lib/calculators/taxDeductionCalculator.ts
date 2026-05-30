@@ -6,6 +6,7 @@ export function calcTaxDeduction(inputs: CalculatorInputs): CalculatorResult[] {
   const totalHomeSqFt = parseFloat(inputs.totalHomeSqFt ?? "1000") || 1;
   const monthlyRentOrMortgage = parseFloat(inputs.monthlyRentOrMortgage ?? "0") || 0;
   const internetMonthly = parseFloat(inputs.internetMonthly ?? "60") || 0;
+  const internetBizPct = parseFloat(inputs.internetBizPct ?? "70") || 0;
   const phoneMonthly = parseFloat(inputs.phoneMonthly ?? "0") || 0;
   const phoneBizPct = parseFloat(inputs.phoneBizPct ?? "50") || 0;
   const softwareAnnual = parseFloat(inputs.softwareAnnual ?? "0") || 0;
@@ -15,11 +16,14 @@ export function calcTaxDeduction(inputs: CalculatorInputs): CalculatorResult[] {
   const retirementContributions = parseFloat(inputs.retirementContributions ?? "0") || 0;
   const travelAnnual = parseFloat(inputs.travelAnnual ?? "0") || 0;
   const otherExpenses = parseFloat(inputs.otherExpenses ?? "0") || 0;
-  const marginalTaxRate = parseFloat(inputs.marginalTaxRate ?? "25") || 0;
+  const marginalTaxRate = parseFloat(inputs.marginalTaxRate ?? "22") || 0;
 
+  // Home office: area % applies to rent/mortgage and utilities (IRS regular method)
   const homeOfficePct = totalHomeSqFt > 0 ? homeOfficeSqFt / totalHomeSqFt : 0;
   const homeOfficeDeduction = monthlyRentOrMortgage * 12 * homeOfficePct;
-  const internetDeduction = internetMonthly * 12 * homeOfficePct;
+
+  // Internet: deducted at business-use %, independent of home office area
+  const internetDeduction = internetMonthly * 12 * (internetBizPct / 100);
   const phoneDeduction = phoneMonthly * 12 * (phoneBizPct / 100);
 
   const totalDeductions =
@@ -47,7 +51,7 @@ export function calcTaxDeduction(inputs: CalculatorInputs): CalculatorResult[] {
       value: fmt(totalDeductions),
       highlighted: true,
       color: "success",
-      description: "Total business expenses you can deduct from taxable income",
+      description: "Total business expenses deductible from taxable income",
     },
     {
       id: "tax-savings",
@@ -55,7 +59,7 @@ export function calcTaxDeduction(inputs: CalculatorInputs): CalculatorResult[] {
       value: fmt(taxSavings),
       highlighted: true,
       color: "success",
-      description: `At your ${marginalTaxRate}% marginal rate`,
+      description: `At your ${marginalTaxRate}% marginal rate — actual savings include SE tax reduction too`,
     },
     {
       id: "taxable-income",
@@ -67,13 +71,13 @@ export function calcTaxDeduction(inputs: CalculatorInputs): CalculatorResult[] {
       id: "home-office",
       label: "Home Office Deduction",
       value: fmt(homeOfficeDeduction),
-      description: `${(homeOfficePct * 100).toFixed(1)}% of your home used for business`,
+      description: `${(homeOfficePct * 100).toFixed(1)}% of home area — applied to rent/mortgage`,
     },
     {
       id: "internet-phone",
       label: "Internet + Phone Deduction",
       value: fmt(internetDeduction + phoneDeduction),
-      description: "Business-use portion of internet and phone bills",
+      description: `Internet at ${internetBizPct}% business use; phone at ${phoneBizPct}% business use`,
     },
     {
       id: "software-equipment",
