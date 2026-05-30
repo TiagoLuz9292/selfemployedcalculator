@@ -4,10 +4,13 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { glossaryTerms, getTermBySlug } from "@/data/glossary";
 import { getCalculatorBySlug } from "@/data/calculators";
+import { getComparisonBySlug } from "@/data/comparisons";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
 import { StickyPartnerBar } from "@/components/monetization/StickyPartnerBar";
+import { siteConfig } from "@/data/site";
 
 interface PageProps {
   params: Promise<{ term: string }>;
@@ -44,8 +47,27 @@ export default async function GlossaryTermPage({ params }: PageProps) {
     .filter((t): t is NonNullable<typeof t> => t !== undefined)
     .slice(0, 6);
 
+  const relatedComparisons = (entry.relatedComparisonSlugs ?? [])
+    .map((s) => getComparisonBySlug(s))
+    .filter((c): c is NonNullable<typeof c> => c !== undefined)
+    .slice(0, 3);
+
+  const definedTermSchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: entry.term,
+    description: entry.shortDef,
+    url: `${siteConfig.url}/glossary/${entry.slug}`,
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: "FreelanceCalc Glossary",
+      url: `${siteConfig.url}/glossary`,
+    },
+  };
+
   return (
     <div className="container mx-auto max-w-3xl px-4 py-12">
+      <JsonLd schema={definedTermSchema} />
       <StickyPartnerBar />
       <div className="mb-6">
         <Breadcrumbs
@@ -98,6 +120,26 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                 className="rounded-full border border-border bg-card px-4 py-2 text-sm hover:border-primary/40 hover:text-primary transition-colors"
               >
                 {t.term}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {relatedComparisons.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold mb-4">Related Comparisons</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {relatedComparisons.map((comp) => (
+              <Link
+                key={comp.slug}
+                href={`/compare/${comp.slug}`}
+                className="group rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:bg-secondary/20 transition-all flex items-start justify-between gap-2"
+              >
+                <p className="font-semibold text-sm leading-tight group-hover:text-primary transition-colors">
+                  {comp.title}
+                </p>
+                <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all mt-0.5" />
               </Link>
             ))}
           </div>

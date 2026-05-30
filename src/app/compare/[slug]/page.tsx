@@ -4,7 +4,10 @@ import Link from "next/link";
 import { comparisons, getComparisonBySlug } from "@/data/comparisons";
 import { getCalculatorBySlug } from "@/data/calculators";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { buildFaqSchema } from "@/lib/seo/jsonLd";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { FaqSection } from "@/components/content/FaqSection";
 import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
 import { CheckCircle2, MinusCircle } from "lucide-react";
 
@@ -39,6 +42,8 @@ export default async function ComparisonPage({ params }: PageProps) {
   const comp = getComparisonBySlug(slug);
   if (!comp) notFound();
 
+  const faqSchema = comp.faqs && comp.faqs.length > 0 ? buildFaqSchema(comp.faqs) : null;
+
   const relatedCalcs = (comp.relatedCalcSlugs ?? [])
     .map((s) => getCalculatorBySlug(s))
     .filter(Boolean);
@@ -54,6 +59,7 @@ export default async function ComparisonPage({ params }: PageProps) {
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-10">
+      {faqSchema && <JsonLd schema={faqSchema} />}
       <div className="mb-6">
         <Breadcrumbs
           items={[
@@ -104,6 +110,10 @@ export default async function ComparisonPage({ params }: PageProps) {
       </div>
 
       <PartnerBlock featuredKeys={featuredPartnerKeys} className="mb-10" />
+
+      {comp.faqs && comp.faqs.length > 0 && (
+        <FaqSection faqs={comp.faqs} />
+      )}
 
       {relatedCalcs.length > 0 && (
         <div className="mb-8">

@@ -19,7 +19,7 @@ export function buildCalculatorMetadata(calc: CalculatorMeta): Metadata {
       type: "website",
       images: [
         {
-          url: `${siteConfig.url}/api/og?title=${encodeURIComponent(calc.name)}&desc=${encodeURIComponent(calc.shortName)}`,
+          url: `${siteConfig.url}/api/og?title=${encodeURIComponent(calc.name)}&desc=${encodeURIComponent(calc.shortName)}&tag=${encodeURIComponent(calc.category)}`,
           width: 1200,
           height: 630,
           alt: calc.name,
@@ -60,6 +60,14 @@ export function buildPageMetadata({
       url: canonical,
       siteName: siteConfig.name,
       type: "website",
+      images: [
+        {
+          url: `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}&desc=${encodeURIComponent(description.slice(0, 80))}`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",

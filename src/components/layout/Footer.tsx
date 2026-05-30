@@ -125,7 +125,9 @@ export function Footer() {
               Privacy Policy
             </Link>
             <span className="text-xs text-muted-foreground">·</span>
-            {/* TODO: Add a niche-appropriate disclaimer here */}
+            <p className="text-xs text-muted-foreground">
+              FreelanceCalc provides educational tools only. Nothing on this site constitutes financial, tax, or legal advice. Consult a qualified professional for your specific situation.
+            </p>
           </div>
         </div>
       </div>

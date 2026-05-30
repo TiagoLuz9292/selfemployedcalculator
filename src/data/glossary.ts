@@ -5,6 +5,7 @@ export interface GlossaryTerm {
   body: string;
   relatedSlugs?: string[];
   relatedTerms?: string[];
+  relatedComparisonSlugs?: string[];
   keywords?: string[];
 }
 
@@ -16,6 +17,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     keywords: ["freelance hourly rate", "how to calculate hourly rate freelance", "what hourly rate should I charge"],
     relatedSlugs: ["freelance-hourly-rate-calculator", "day-rate-calculator", "billable-hours-calculator"],
     relatedTerms: ["day-rate", "billable-hours", "value-based-pricing"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing", "freelance-vs-full-time-salary"],
     body: `## What Is a Freelance Hourly Rate?
 
 A freelance hourly rate is the amount you charge clients for each hour of billable work. Unlike an employee salary, your hourly rate must cover not just your income but also taxes, business expenses, unpaid vacation time, and a profit buffer.
@@ -49,6 +51,7 @@ Review your rate at least annually. Raise it when: your skills have improved sig
     keywords: ["day rate freelance", "consultant day rate", "how to calculate day rate"],
     relatedSlugs: ["day-rate-calculator", "freelance-hourly-rate-calculator", "retainer-rate-calculator"],
     relatedTerms: ["hourly-rate", "retainer", "billable-hours"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
     body: `## What Is a Day Rate?
 
 A day rate (also called a daily rate) is a fixed fee charged for a full day of work, typically 7-8 hours. It's the standard billing unit for consultants, contractors, and interim managers who work on-site or on time-boxed projects.
@@ -79,6 +82,7 @@ Day rates vary significantly by sector. Senior technology consultants in the UK 
     keywords: ["freelance retainer", "retainer agreement freelance", "monthly retainer fee"],
     relatedSlugs: ["retainer-rate-calculator", "client-profitability-calculator", "freelance-hourly-rate-calculator"],
     relatedTerms: ["day-rate", "client-profitability", "utilization-rate"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing", "bonsai-vs-freshbooks"],
     body: `## What Is a Freelance Retainer?
 
 A retainer is a recurring arrangement where a client pays a fixed monthly fee in exchange for a guaranteed block of your time or a set of deliverables. It's one of the most valuable income structures for freelancers because it provides predictable, recurring revenue.
@@ -113,6 +117,7 @@ Example: $80/hr × 20 hrs × 0.9 (10% discount) = **$1,440/month**
     keywords: ["freelance utilization rate", "billable utilization rate", "what is a good utilization rate freelancer"],
     relatedSlugs: ["utilization-rate-calculator", "billable-hours-calculator", "profit-margin-calculator"],
     relatedTerms: ["billable-hours", "break-even", "retainer"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing", "toggl-vs-harvest"],
     body: `## What Is Utilization Rate?
 
 Utilization rate measures what percentage of your available working time is spent on billable client work. It's one of the most important KPIs for any freelance business.
@@ -148,6 +153,7 @@ A low utilization rate means you're working many hours but billing only a fracti
     keywords: ["billable hours freelancer", "what are billable hours", "how to track billable hours"],
     relatedSlugs: ["billable-hours-calculator", "utilization-rate-calculator", "freelance-hourly-rate-calculator"],
     relatedTerms: ["utilization-rate", "hourly-rate", "break-even"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing", "toggl-vs-harvest"],
     body: `## What Are Billable Hours?
 
 Billable hours are the hours you can legitimately charge to a client. They typically include time spent directly on their project — designing, writing, coding, consulting, reviewing, or communicating about the project.
@@ -180,6 +186,7 @@ Use time tracking tools (Toggl, Harvest, Clockify) even on fixed-price projects 
     keywords: ["freelance profit margin", "what is a good profit margin freelancer", "how to calculate profit margin freelance"],
     relatedSlugs: ["profit-margin-calculator", "break-even-calculator", "client-profitability-calculator"],
     relatedTerms: ["overhead", "break-even", "net-income"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
     body: `## What Is Profit Margin for Freelancers?
 
 Profit margin measures how much of your revenue becomes actual profit after expenses. Two key types:
@@ -216,6 +223,7 @@ A freelancer with a 15% net margin earning $100,000 gross keeps only $15,000 in 
     keywords: ["self employment tax", "SE tax freelancer", "self employed tax rate", "15.3 self employment tax"],
     relatedSlugs: ["self-employment-tax-calculator", "quarterly-tax-calculator", "freelance-take-home-pay-calculator"],
     relatedTerms: ["quarterly-estimated-tax", "take-home-pay", "net-income"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed", "freelance-vs-full-time-salary"],
     body: `## What Is Self-Employment Tax?
 
 In the US, self-employment (SE) tax is a 15.3% tax that covers Social Security (12.4%) and Medicare (2.9%). As an employee, you pay half (7.65%) and your employer pays the other half. As a freelancer, you pay both halves yourself.
@@ -251,6 +259,7 @@ SE tax is paid as part of your quarterly estimated tax payments. Missing quarter
     keywords: ["quarterly estimated tax freelancer", "how to pay quarterly taxes", "quarterly tax due dates", "IRS quarterly payments"],
     relatedSlugs: ["quarterly-tax-calculator", "self-employment-tax-calculator", "emergency-fund-calculator"],
     relatedTerms: ["self-employment-tax", "take-home-pay", "emergency-fund"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed"],
     body: `## What Are Quarterly Estimated Tax Payments?
 
 Unlike employees who have taxes withheld from each paycheck, freelancers must pay estimated taxes directly to the IRS (and often to their state) four times per year. These payments cover income tax and self-employment tax on income earned in each quarter.
@@ -287,6 +296,7 @@ Use the IRS Direct Pay system at irs.gov/directpay or set up an EFTPS account fo
     keywords: ["VAT freelancer", "what is VAT", "do freelancers charge VAT", "VAT registration threshold"],
     relatedSlugs: ["vat-calculator-freelancer", "invoice-total-calculator", "freelance-take-home-pay-calculator"],
     relatedTerms: ["invoice", "take-home-pay", "ir35"],
+    relatedComparisonSlugs: ["wise-vs-paypal-freelancers", "freshbooks-vs-quickbooks-self-employed"],
     body: `## What Is VAT?
 
 Value Added Tax (VAT) is a consumption tax levied on goods and services. Unlike US sales tax (which is only charged at final sale), VAT is collected at every stage of the supply chain, with businesses reclaiming the VAT they paid on their inputs.
@@ -319,6 +329,7 @@ When billing B2B clients in other EU countries, the **reverse charge** mechanism
     keywords: ["freelance take home pay", "freelancer net income after taxes", "self employed take home pay calculator"],
     relatedSlugs: ["freelance-take-home-pay-calculator", "self-employment-tax-calculator", "freelance-income-goal-calculator"],
     relatedTerms: ["self-employment-tax", "net-income", "quarterly-estimated-tax"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
     body: `## What Is Freelance Take-Home Pay?
 
 Take-home pay is what you actually keep from your freelance income after all deductions. For freelancers, the gap between gross revenue and net take-home is typically much larger than for employees.
@@ -357,6 +368,7 @@ Use our take-home pay calculator to input your specific situation — gross inco
     keywords: ["freelance break even point", "break even analysis freelancer", "minimum revenue freelancer"],
     relatedSlugs: ["break-even-calculator", "profit-margin-calculator", "billable-hours-calculator"],
     relatedTerms: ["overhead", "profit-margin", "billable-hours"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
     body: `## What Is a Freelance Break-even Point?
 
 Your break-even point is the minimum revenue you need to cover all your fixed costs — the point where your business makes neither profit nor loss. Understanding this number is essential for setting rates and knowing when you can afford to turn down work.
@@ -394,6 +406,7 @@ If you don't know your break-even, you might take on low-paying work that keeps 
     keywords: ["value based pricing freelance", "how to charge based on value", "value based fees consultant"],
     relatedSlugs: ["value-based-pricing-calculator", "project-quote-calculator", "freelance-hourly-rate-calculator"],
     relatedTerms: ["hourly-rate", "scope-creep", "client-profitability"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
     body: `## What Is Value-Based Pricing?
 
 Value-based pricing means setting your fee based on the economic value you create for the client rather than the time you spend creating it. If your SEO work generates $200,000 in new revenue for a client, charging $2,000 (1% of value) is arguably underpriced, while charging $20,000 (10%) is justified by the ROI.
@@ -429,6 +442,7 @@ Example: Client expects $100,000 in additional revenue from your marketing campa
     keywords: ["emergency fund freelancer", "how much emergency fund freelancer", "self employed emergency fund"],
     relatedSlugs: ["emergency-fund-calculator", "savings-rate-calculator", "break-even-calculator"],
     relatedTerms: ["quarterly-estimated-tax", "overhead", "break-even"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
     body: `## What Is an Emergency Fund?
 
 An emergency fund is a liquid savings reserve kept separate from business accounts, used only for genuine financial emergencies — unexpected expenses or income gaps that could otherwise derail your finances.
@@ -464,6 +478,7 @@ Start with 1 month as your initial goal. Once the business is stable and you hav
     keywords: ["late payment interest freelancer", "how to charge interest on late invoices", "late payment law UK"],
     relatedSlugs: ["late-payment-interest-calculator", "invoice-total-calculator", "client-profitability-calculator"],
     relatedTerms: ["invoice", "client-profitability", "scope-creep"],
+    relatedComparisonSlugs: ["bonsai-vs-freshbooks", "wise-vs-paypal-freelancers"],
     body: `## What Is Late Payment Interest?
 
 Late payment interest is the additional charge you can apply to invoices that remain unpaid after the agreed payment term. It compensates you for the financial cost of being paid late and incentivizes prompt payment.
@@ -497,6 +512,7 @@ $2,000 × (0.18 ÷ 365) × 45 = **$44.38 interest**
     keywords: ["client profitability freelancer", "how to measure client profitability", "profitable clients freelance"],
     relatedSlugs: ["client-profitability-calculator", "project-quote-calculator", "profit-margin-calculator"],
     relatedTerms: ["profit-margin", "scope-creep", "utilization-rate"],
+    relatedComparisonSlugs: ["bonsai-vs-freshbooks"],
     body: `## What Is Client Profitability?
 
 Client profitability is the true profit generated by a client after accounting for all time you spend on their work — not just the hours you bill, but also non-billable time like emails, revisions, admin, and relationship management.
@@ -532,6 +548,7 @@ Consider parting ways when: the effective rate is consistently below your minimu
     keywords: ["scope creep freelance", "what is scope creep", "how to prevent scope creep"],
     relatedSlugs: ["project-quote-calculator", "client-profitability-calculator", "retainer-rate-calculator"],
     relatedTerms: ["value-based-pricing", "late-payment-interest", "client-profitability"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing", "bonsai-vs-freshbooks"],
     body: `## What Is Scope Creep?
 
 Scope creep occurs when a project gradually expands beyond its original definition — additional features are requested, deliverables change, or the client's expectations evolve — without the budget or timeline being adjusted accordingly.
@@ -570,6 +587,7 @@ Use the phrase: *"That sounds like a great addition — it's outside our origina
     keywords: ["freelance overhead costs", "business overhead freelancer", "fixed costs freelancer"],
     relatedSlugs: ["break-even-calculator", "profit-margin-calculator", "freelance-hourly-rate-calculator"],
     relatedTerms: ["break-even", "profit-margin", "net-income"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
     body: `## What Is Overhead for Freelancers?
 
 Overhead refers to the ongoing costs of running your freelance business that aren't directly tied to a specific client or project. Unlike project costs (e.g., stock photos for a specific design project), overhead is constant whether you have 0 clients or 10.
@@ -605,6 +623,7 @@ Review your overhead quarterly. Cancel unused subscriptions — they accumulate 
     keywords: ["freelance net income", "net income vs gross income freelancer", "self employed net income"],
     relatedSlugs: ["freelance-take-home-pay-calculator", "profit-margin-calculator", "self-employment-tax-calculator"],
     relatedTerms: ["take-home-pay", "profit-margin", "self-employment-tax"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
     body: `## What Is Net Income for Freelancers?
 
 Net income is what remains from your gross revenue after subtracting all business expenses. It's different from take-home pay — net income is a business measure (before personal taxes), while take-home pay is what you keep after paying both business expenses and personal taxes.
@@ -644,6 +663,7 @@ Track net income monthly to spot trends. A month with high revenue but thin net 
     keywords: ["IR35 freelancer", "what is IR35 UK", "IR35 rules contractor", "inside outside IR35"],
     relatedSlugs: ["self-employment-tax-calculator", "freelance-take-home-pay-calculator"],
     relatedTerms: ["take-home-pay", "self-employment-tax", "vat"],
+    relatedComparisonSlugs: ["deel-vs-remote-contractors"],
     body: `## What Is IR35?
 
 IR35 (officially the "off-payroll working rules") is UK tax legislation aimed at contractors who work through a personal service company (PSC) or limited company. It determines whether a contractor's engagement is genuinely self-employed or is "disguised employment" — working like an employee but paying lower taxes by routing income through a company.
@@ -679,6 +699,7 @@ Being caught inside IR35 can cost a contractor tens of thousands of pounds annua
     keywords: ["freelance invoice", "how to create an invoice freelancer", "what to include on a freelance invoice"],
     relatedSlugs: ["invoice-total-calculator", "late-payment-interest-calculator", "vat-calculator-freelancer"],
     relatedTerms: ["late-payment-interest", "vat", "client-profitability"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed", "bonsai-vs-freshbooks", "freshbooks-vs-wave"],
     body: `## What Is a Freelance Invoice?
 
 An invoice is a legal payment request that documents the work you've done and the amount owed. A proper invoice protects you legally, helps your client process payment correctly, and creates a paper trail for your accounting records.

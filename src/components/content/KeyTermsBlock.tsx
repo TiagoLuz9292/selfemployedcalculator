@@ -33,6 +33,9 @@ const SLUG_TERMS: Record<string, string[]> = {
   "savings-rate-calculator":            ["net-income", "emergency-fund", "take-home-pay"],
   "retirement-contribution-calculator": ["self-employment-tax", "net-income", "take-home-pay"],
   "freelance-income-goal-calculator":   ["hourly-rate", "take-home-pay", "net-income"],
+  "1099-tax-calculator":                ["self-employment-tax", "quarterly-estimated-tax", "take-home-pay", "net-income"],
+  "salary-to-freelance-rate-calculator": ["hourly-rate", "self-employment-tax", "overhead", "billable-hours"],
+  "freelance-tax-deduction-calculator": ["self-employment-tax", "net-income", "take-home-pay", "overhead"],
 };
 
 interface KeyTermsBlockProps {

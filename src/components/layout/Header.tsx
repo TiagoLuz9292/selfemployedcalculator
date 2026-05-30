@@ -6,14 +6,13 @@ import { useState } from "react";
 import { siteConfig } from "@/data/site";
 import { Calculator, Briefcase, BookOpen, Menu, X, GitCompareArrows, BookMarked, ChevronDown } from "lucide-react";
 
-// TODO: Replace with the 4-6 most important calculator slugs for this niche.
-// These appear in the desktop nav dropdown under "Calculators".
 const TOP_CALCULATORS = [
-  { href: "/calculators/freelance-hourly-rate-calculator", label: "Hourly Rate" },
-  { href: "/calculators/project-quote-calculator",          label: "Project Quote" },
+  { href: "/calculators/freelance-hourly-rate-calculator",   label: "Hourly Rate" },
+  { href: "/calculators/self-employment-tax-calculator",     label: "Self-Employment Tax" },
+  { href: "/calculators/1099-tax-calculator",                label: "1099 Tax" },
   { href: "/calculators/freelance-take-home-pay-calculator", label: "Take-Home Pay" },
-  { href: "/calculators/self-employment-tax-calculator",    label: "Self-Employment Tax" },
-  { href: "/calculators/invoice-total-calculator",          label: "Invoice Calculator" },
+  { href: "/calculators/invoice-total-calculator",           label: "Invoice Calculator" },
+  { href: "/calculators/freelance-tax-deduction-calculator", label: "Tax Deductions" },
 ];
 
 const secondaryNavLinks = [
