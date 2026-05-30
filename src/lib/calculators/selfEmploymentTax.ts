@@ -1,20 +1,21 @@
 import type { CalculatorInputs, CalculatorResult } from "@/types/calculator";
 
-// 2025 single-filer brackets — update to 2026 values from irs.gov/newsroom once available
+// IRS Rev. Proc. 2025-32 — 2026 single-filer brackets (TCJA extended by P.L. 119-21)
+const STD_DEDUCTION_2026 = 16100;  // single filer standard deduction
+const SS_WAGE_BASE = 184500;       // 2026 Social Security wage base
+
 function approximateFederalTax(taxableIncome: number): number {
   if (taxableIncome <= 0) return 0;
   const brackets = [
-    { limit: 11925,   rate: 0.10 },
-    { limit: 48475,   rate: 0.12 },
-    { limit: 103350,  rate: 0.22 },
-    { limit: 197300,  rate: 0.24 },
-    { limit: 250525,  rate: 0.32 },
-    { limit: 626350,  rate: 0.35 },
+    { limit: 12400,   rate: 0.10 },
+    { limit: 50400,   rate: 0.12 },
+    { limit: 105700,  rate: 0.22 },
+    { limit: 201775,  rate: 0.24 },
+    { limit: 256225,  rate: 0.32 },
+    { limit: 640600,  rate: 0.35 },
     { limit: Infinity, rate: 0.37 },
   ];
-  // 2025 single standard deduction — update to 2026 value from irs.gov/newsroom
-  const STANDARD_DEDUCTION = 15000;
-  const agi = Math.max(0, taxableIncome - STANDARD_DEDUCTION);
+  const agi = Math.max(0, taxableIncome - STD_DEDUCTION_2026);
   let tax = 0;
   let prev = 0;
   let remaining = agi;
@@ -37,7 +38,13 @@ export function calcSelfEmploymentTax(inputs: CalculatorInputs): CalculatorResul
   if (grossIncome <= 0) return [];
 
   const netEarnings = Math.max(0, grossIncome - deductibleExpenses);
-  const seTax = netEarnings * 0.9235 * 0.153;
+  const seBase = netEarnings * 0.9235;
+
+  // SE tax with 2026 SS wage base cap; ACA surtax not applied (filing status unknown)
+  const ssTax = Math.min(seBase, SS_WAGE_BASE) * 0.124;
+  const medicareTax = seBase * 0.029;
+  const seTax = ssTax + medicareTax;
+
   const deductibleHalfOfSeTax = seTax / 2;
   const adjustedGrossIncome = netEarnings - deductibleHalfOfSeTax;
   const federalTax = approximateFederalTax(adjustedGrossIncome);
@@ -56,7 +63,7 @@ export function calcSelfEmploymentTax(inputs: CalculatorInputs): CalculatorResul
       value: fmt(seTax),
       highlighted: true,
       color: "warning",
-      description: "Social Security (12.4%) + Medicare (2.9%) on 92.35% of net earnings",
+      description: "SS (12.4% up to $184,500) + Medicare (2.9%) on 92.35% of net earnings",
     },
     {
       id: "take-home",
@@ -70,7 +77,7 @@ export function calcSelfEmploymentTax(inputs: CalculatorInputs): CalculatorResul
       id: "federal-tax",
       label: "Federal Income Tax",
       value: fmt(federalTax),
-      description: "Estimated using 2025 single-filer brackets with standard deduction",
+      description: "2026 single-filer brackets with standard deduction (IRS Rev. Proc. 2025-32)",
     },
     {
       id: "state-tax",

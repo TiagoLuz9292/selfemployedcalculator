@@ -1,19 +1,21 @@
 import type { CalculatorInputs, CalculatorResult } from "@/types/calculator";
 
-// 2025 single-filer brackets (progressive, used as conservative estimate)
+// IRS Rev. Proc. 2025-32 — 2026 single-filer brackets (TCJA extended by P.L. 119-21)
+const STD_DEDUCTION_2026 = 16100;
+const SS_WAGE_BASE = 184500;  // 2026 Social Security wage base
+
 function estimateFederalTax(taxableIncome: number): number {
   if (taxableIncome <= 0) return 0;
   const brackets = [
-    { limit: 11925,   rate: 0.10 },
-    { limit: 48475,   rate: 0.12 },
-    { limit: 103350,  rate: 0.22 },
-    { limit: 197300,  rate: 0.24 },
-    { limit: 250525,  rate: 0.32 },
-    { limit: 626350,  rate: 0.35 },
+    { limit: 12400,   rate: 0.10 },
+    { limit: 50400,   rate: 0.12 },
+    { limit: 105700,  rate: 0.22 },
+    { limit: 201775,  rate: 0.24 },
+    { limit: 256225,  rate: 0.32 },
+    { limit: 640600,  rate: 0.35 },
     { limit: Infinity, rate: 0.37 },
   ];
-  const STANDARD_DEDUCTION_2025 = 15000;
-  const agi = Math.max(0, taxableIncome - STANDARD_DEDUCTION_2025);
+  const agi = Math.max(0, taxableIncome - STD_DEDUCTION_2026);
   let tax = 0;
   let prev = 0;
   let remaining = agi;
@@ -35,7 +37,11 @@ export function calcQuarterlyTax(inputs: CalculatorInputs): CalculatorResult[] {
 
   if (annualNetIncome <= 0) return [];
 
-  const seTax = annualNetIncome * 0.9235 * 0.153;
+  const seBase = annualNetIncome * 0.9235;
+  const ssTax = Math.min(seBase, SS_WAGE_BASE) * 0.124;
+  const medicareTax = seBase * 0.029;
+  const seTax = ssTax + medicareTax;
+
   const halfSeTax = seTax / 2;
   const taxableIncome = Math.max(0, annualNetIncome - halfSeTax);
   const estimatedIncomeTax = estimateFederalTax(taxableIncome);
@@ -43,13 +49,11 @@ export function calcQuarterlyTax(inputs: CalculatorInputs): CalculatorResult[] {
 
   // Safe harbor: avoid underpayment penalty by paying the LESSER of:
   // (a) 100% of prior year's total tax, or (b) current year estimate
-  // Paying either amount guarantees no underpayment penalty.
   const safeHarborAmount = priorYearTaxes > 0
     ? Math.min(estimatedAnnualTax, priorYearTaxes)
     : estimatedAnnualTax;
 
   const remainingTax = Math.max(0, safeHarborAmount - alreadyPaidThisYear);
-  // Divide remaining balance over 4 equal quarterly payments
   const quarterlyPayment = remainingTax / 4;
 
   const setAside = annualNetIncome > 0 ? (estimatedAnnualTax / annualNetIncome) * 100 : 0;
@@ -71,19 +75,19 @@ export function calcQuarterlyTax(inputs: CalculatorInputs): CalculatorResult[] {
       label: "Estimated Annual Tax",
       value: fmt(estimatedAnnualTax),
       highlighted: true,
-      description: "SE tax + federal income tax (2025 brackets, single filer)",
+      description: "SE tax + federal income tax (2026 brackets, single filer)",
     },
     {
       id: "se-tax",
       label: "Self-Employment Tax",
       value: fmt(seTax),
-      description: "15.3% on 92.35% of net income",
+      description: "SS (12.4% up to $184,500) + Medicare (2.9%) on 92.35% of net income",
     },
     {
       id: "income-tax-estimate",
       label: "Estimated Income Tax",
       value: fmt(estimatedIncomeTax),
-      description: "2025 single-filer brackets with standard deduction",
+      description: "2026 single-filer brackets with standard deduction",
     },
     {
       id: "set-aside-rate",

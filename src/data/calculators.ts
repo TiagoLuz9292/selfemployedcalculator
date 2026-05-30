@@ -644,7 +644,7 @@ Health insurance is the second major variable. Employer-sponsored coverage is of
       {
         question: "When are quarterly tax payments due?",
         answer:
-          "Q1: April 15 | Q2: June 16 | Q3: September 15 | Q4: January 15 of the following year. When a standard date falls on a weekend or holiday it shifts to the next business day. Missing these dates triggers an underpayment penalty, currently around 8% annually on the unpaid amount.",
+          "Q1: April 15 | Q2: June 15 | Q3: September 15 | Q4: January 15 of the following year. When a date falls on a weekend or holiday it shifts to the next business day. Missing these dates triggers an underpayment penalty, currently around 8% annually on the unpaid amount.",
       },
       {
         question: "What is the safe harbor rule for quarterly taxes?",
@@ -1293,7 +1293,7 @@ Track your savings rate monthly. When you've had several high-income months, you
         label: "Account Type",
         type: "select",
         options: [
-          { label: "SEP-IRA — Simple setup, up to 25% of net income", value: "sep-ira" },
+          { label: "SEP-IRA — Simple setup, ~20% of net income (IRS effective rate)", value: "sep-ira" },
           { label: "Solo 401(k) — Higher limits, employee + employer contributions", value: "solo-401k" },
           { label: "SIMPLE IRA — For businesses with up to 100 employees", value: "simple-ira" },
         ],
@@ -1307,7 +1307,7 @@ Track your savings rate monthly. When you've had several high-income months, you
       {
         question: "What's the difference between SEP-IRA and Solo 401(k)?",
         answer:
-          "SEP-IRA is simpler: contribute up to 25% of net self-employment income (max $69,000 in 2024). Solo 401(k) allows both employee contributions ($23,000 in 2024) plus 25% employer contributions, for a potentially higher total. Solo 401(k) also allows Roth contributions and loans.",
+          "SEP-IRA is simpler: the IRS effective contribution rate for sole proprietors is ~20% of net SE income (max $72,000 for 2026). Solo 401(k) allows both employee contributions ($24,500 for 2026) plus ~20% employer contributions, for a potentially higher total. Solo 401(k) also allows Roth contributions and loans.",
       },
       {
         question: "How much tax do I save by maxing my retirement account?",
@@ -1322,14 +1322,14 @@ Track your savings rate monthly. When you've had several high-income months, you
       {
         question: "Can I have both a SEP-IRA and a Solo 401(k)?",
         answer:
-          "You can have both account types, but your total contributions across all accounts are limited to the annual defined contribution limit ($69,000 in 2024). Most freelancers choose one — Solo 401(k) for higher income earners who want maximum contributions, SEP-IRA for simplicity.",
+          "You can have both account types, but your total contributions across all accounts are limited to the annual defined contribution limit ($72,000 for 2026). Most freelancers choose one — Solo 401(k) for higher income earners who want maximum contributions, SEP-IRA for simplicity.",
       },
     ],
     educationContent: {
       title: "Retirement Accounts for Self-Employed Freelancers",
       body: `Retirement planning is one of the most neglected aspects of freelance finances — and one of the most valuable, thanks to substantial tax advantages.
 
-As a self-employed person, you have access to retirement accounts with much higher contribution limits than standard employee plans. A SEP-IRA allows you to contribute up to 25% of net self-employment income, up to $69,000 in 2024. A Solo 401(k) allows even more — combining employee contributions ($23,000) with employer contributions (25% of net income), up to the same annual cap.
+As a self-employed person, you have access to retirement accounts with much higher contribution limits than standard employee plans. A SEP-IRA allows sole proprietors to contribute approximately 20% of net self-employment income (the IRS-correct effective rate after deducting half of SE tax), up to $72,000 for 2026. A Solo 401(k) allows even more — combining employee contributions ($24,500 for 2026) with employer contributions (~20% of net income), up to the same annual cap.
 
 Every dollar contributed to a traditional retirement account reduces your taxable income dollar-for-dollar. At the 22% federal bracket, a $20,000 SEP-IRA contribution saves you $4,400 in federal income tax. It also slightly reduces your SE tax since it lowers your adjusted gross income.
 
@@ -1475,7 +1475,7 @@ This backward calculation is more motivating than arbitrary rate-setting because
       },
       {
         question: "Do I have to pay quarterly taxes on 1099 income?",
-        answer: "Yes. If you expect to owe $1,000 or more in federal taxes for the year, the IRS requires you to make quarterly estimated payments. The due dates are April 15, June 16, September 15, and January 15. Missing these results in an underpayment penalty (currently ~8% annualized on the shortfall).",
+        answer: "Yes. If you expect to owe $1,000 or more in federal taxes for the year, the IRS requires you to make quarterly estimated payments. The due dates are April 15, June 15, September 15, and January 15 (shifting to the next business day if a date falls on a weekend or holiday). Missing these results in an underpayment penalty (currently ~8% annualized on the shortfall).",
       },
       {
         question: "What expenses can I deduct from 1099 income?",
@@ -1764,7 +1764,7 @@ For an $80,000 salary with $12,000 in employer benefits and 30 billable hours/we
         unit: "$",
         min: 0,
         defaultValue: 0,
-        helpText: "SEP-IRA (up to 25% of net income) or Solo 401k contributions",
+        helpText: "SEP-IRA (~20% of net income effective rate) or Solo 401k contributions",
       },
       {
         id: "travelAnnual",
@@ -1819,7 +1819,7 @@ For an $80,000 salary with $12,000 in employer benefits and 30 billable hours/we
       },
       {
         question: "How much can I contribute to a SEP-IRA?",
-        answer: "Up to 25% of your net self-employment income, capped at $69,000 for 2024 (limit adjusts annually). For someone with $80,000 in net SE income, that's up to $20,000. SEP-IRA contributions reduce your taxable income dollar-for-dollar — at a 22% rate, a $10,000 contribution saves $2,200 in federal taxes plus reduces your state tax.",
+        answer: "The IRS effective rate for sole proprietors is approximately 20% of net SE income (after deducting half of SE tax), capped at $72,000 for 2026. For someone with $80,000 in net SE income the maximum is approximately $14,870. SEP-IRA contributions reduce your taxable income dollar-for-dollar — at a 22% rate, a $10,000 contribution saves $2,200 in federal taxes plus reduces your state tax.",
       },
     ],
     educationContent: {

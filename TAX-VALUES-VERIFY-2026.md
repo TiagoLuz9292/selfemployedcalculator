@@ -1,7 +1,54 @@
-# ChatGPT Deep Search Prompt — 2026 US Tax Values
+# 2026 US Tax Values — Verified ✅
+**Verified:** 2026-05-30 via ChatGPT deep search (IRS Rev. Proc. 2025-32 + SSA + official sources)
+**Status:** All values confirmed and implemented in the codebase.
 
-Use this prompt with ChatGPT using the **"Search"** or **"Deep Research"** option to get
-current, verified 2026 IRS values. Paste the entire block below as your message.
+## Confirmed 2026 Values
+
+| Item | 2025 | 2026 | Source |
+|---|---|---|---|
+| TCJA status | Active | Extended by P.L. 119-21 (One Big Beautiful Bill, signed July 4 2025) | Congressional record |
+| Bracket rates | 10/12/22/24/32/35/37% | Same | IRS Rev. Proc. 2025-32 |
+| 10% bracket top — single | $11,925 | $12,400 | IRS Rev. Proc. 2025-32 |
+| 12% bracket top — single | $48,475 | $50,400 | IRS Rev. Proc. 2025-32 |
+| 22% bracket top — single | $103,350 | $105,700 | IRS Rev. Proc. 2025-32 |
+| 24% bracket top — single | $197,300 | $201,775 | IRS Rev. Proc. 2025-32 |
+| 32% bracket top — single | $250,525 | $256,225 | IRS Rev. Proc. 2025-32 |
+| 35% bracket top — single | $626,350 | $640,600 | IRS Rev. Proc. 2025-32 |
+| 10% bracket top — married | $23,850 | $24,800 | IRS Rev. Proc. 2025-32 |
+| 12% bracket top — married | $96,950 | $100,800 | IRS Rev. Proc. 2025-32 |
+| 22% bracket top — married | $206,700 | $211,400 | IRS Rev. Proc. 2025-32 |
+| 24% bracket top — married | $394,600 | $403,550 | IRS Rev. Proc. 2025-32 |
+| 32% bracket top — married | $501,050 | $512,450 | IRS Rev. Proc. 2025-32 |
+| 35% bracket top — married | $751,600 | $768,700 | IRS Rev. Proc. 2025-32 |
+| Standard deduction — single | $15,000 | $16,100 | IRS Rev. Proc. 2025-32 |
+| Standard deduction — married | $30,000 | $32,200 | IRS Rev. Proc. 2025-32 |
+| SE tax rate | 15.3% | 15.3% (unchanged) | IRS Schedule SE |
+| 92.35% adjustment factor | 0.9235 | 0.9235 (unchanged) | IRS Schedule SE |
+| SS wage base | $176,100 | $184,500 | SSA announcement |
+| Additional Medicare Tax (0.9%) | $200k/$250k thresholds | Same (not inflation-indexed) | IRS / ACA |
+| SEP-IRA annual limit | $70,000 | $72,000 | IRS Rev. Proc. 2025-32 |
+| Solo 401(k) employee deferral | $23,500 | $24,500 | IRS Rev. Proc. 2025-32 |
+| Solo 401(k) catch-up 50-59 & 64+ | $7,500 | $8,000 | IRS Rev. Proc. 2025-32 |
+| Solo 401(k) catch-up 60-63 (SECURE 2.0) | $11,250 | $11,250 (unchanged) | IRS |
+| SIMPLE IRA employee limit | $16,500 | $17,000 | IRS Rev. Proc. 2025-32 |
+| SIMPLE IRA catch-up 50+ | $3,500 | $4,000 | IRS Rev. Proc. 2025-32 |
+| SIMPLE IRA catch-up 60-63 (SECURE 2.0) | — | $5,250 (new 2026) | IRS |
+| Q1 due date | Apr 15 | Apr 15 | IRS |
+| Q2 due date | Jun 16 (Jun 15 was Sunday) | **Jun 15** (Monday in 2026) | IRS |
+| Q3 due date | Sep 15 | Sep 15 | IRS |
+| Q4 due date | Jan 15, 2026 | Jan 15, 2027 | IRS |
+| UK VAT standard rate | 20% | 20% (unchanged) | HMRC |
+| UK VAT registration threshold | £90,000 | £90,000 (unchanged) | HMRC |
+| UK Late Payment statutory rate | 8% + BoE base | 8% + BoE base (unchanged) | UK Late Payment Act |
+| Bank of England base rate | — | 3.75% as of May 2026 | Bank of England |
+| UK statutory late payment rate | — | 11.75% (8% + 3.75%) | Derived |
+
+---
+
+# Original ChatGPT Deep Search Prompt (for future re-verification)
+
+Use this prompt with ChatGPT using the **"Search"** or **"Deep Research"** option.
+Paste the block below as your message.
 
 ---
 
