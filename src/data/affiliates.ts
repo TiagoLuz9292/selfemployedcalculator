@@ -1,28 +1,27 @@
-// Empty string = placeholder (button hidden until replaced). See AFFILIATE-SETUP.md for signup links.
+// All values are brand homepage placeholders until real affiliate tracking URLs are approved.
 // When approved, give Claude Code the tracking URL and it will replace the placeholder.
-const P = "";
-
+// Using brand homepages (not empty strings) so all buttons render during pre-launch preview.
 export const affiliateLinks: Record<string, string> = {
   // Phase 0 — instant referral or apply now (no traffic needed)
-  freshbooks:  "https://www.freshbooks.com",     // PLACEHOLDER — replace with Impact network tracking URL after approval
-  bonsai:      "https://www.hellobonsai.com",     // PLACEHOLDER — replace with hellobonsai.com affiliate tracking URL after approval
-  wise:        "https://wise.com",               // PLACEHOLDER — replace with wise.com/invite/YOUR_ID referral URL
-  wave:        P,                                // replace with waveapps.com affiliate URL after approval
-  honeybook:   P,                                // replace with honeybook.com/r/YOUR_ID after referral or affiliate approval
-  mercury:     P,                                // replace with mercury.com/r/YOUR_ID after opening account
+  freshbooks:  "https://www.freshbooks.com",       // PLACEHOLDER — replace with Impact network tracking URL after approval
+  bonsai:      "https://www.hellobonsai.com",       // PLACEHOLDER — replace with hellobonsai.com affiliate tracking URL after approval
+  wise:        "https://wise.com",                 // PLACEHOLDER — replace with wise.com/invite/YOUR_ID referral URL
+  wave:        "https://www.waveapps.com",         // PLACEHOLDER — replace with waveapps.com affiliate URL after approval
+  honeybook:   "https://www.honeybook.com",        // PLACEHOLDER — replace with honeybook.com/r/YOUR_ID after approval
+  mercury:     "https://mercury.com",              // PLACEHOLDER — replace with mercury.com/r/YOUR_ID after opening account
 
   // Phase 1 — after 15–20 pages indexed
-  quickbooks:  "https://quickbooks.intuit.com",  // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
-  turbotax:    P,                                // replace with CJ Affiliate tracking URL after approval
-  hrblock:     P,                                // replace with CJ Affiliate tracking URL after approval
-  toggl:       P,                                // replace with toggl.com affiliate tracking URL after approval
-  harvest:     P,                                // replace with getharvest.com affiliate tracking URL after approval
-  relay:       P,                                // replace with relayfi.com/r/YOUR_ID after approval
+  quickbooks:  "https://quickbooks.intuit.com",    // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
+  turbotax:    "https://turbotax.intuit.com",      // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
+  hrblock:     "https://www.hrblock.com",          // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
+  toggl:       "https://toggl.com/track",          // PLACEHOLDER — replace with toggl.com affiliate tracking URL after approval
+  harvest:     "https://www.getharvest.com",       // PLACEHOLDER — replace with getharvest.com affiliate tracking URL after approval
+  relay:       "https://relayfi.com",              // PLACEHOLDER — replace with relayfi.com/r/YOUR_ID after approval
 
   // Phase 2 — after 3 months
-  deel:        "https://www.deel.com",           // PLACEHOLDER — replace with deel.com affiliate tracking URL after approval
-  remote:      P,                                // replace with remote.com affiliate tracking URL after approval
-  "1password": P,                                // replace with 1password.com affiliate tracking URL after approval
+  deel:        "https://www.deel.com",             // PLACEHOLDER — replace with deel.com affiliate tracking URL after approval
+  remote:      "https://remote.com",               // PLACEHOLDER — replace with remote.com affiliate tracking URL after approval
+  "1password": "https://1password.com",            // PLACEHOLDER — replace with 1password.com affiliate tracking URL after approval
 };
 
 // Contextual affiliate keys per calculator/blog category.
