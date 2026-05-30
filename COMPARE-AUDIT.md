@@ -7,21 +7,21 @@
 
 ## Summary — Issues by Priority
 
-| # | Page | Severity | Issue |
-|---|---|---|---|
-| 1 | `freshbooks-vs-quickbooks-self-employed` | **Critical** | QuickBooks Self-Employed was discontinued and migrated to "QuickBooks Solopreneur" in 2024. The entire comparison refers to a product that no longer exists under that name. Pricing, features, and branding all need updating. |
-| 2 | `fiverr-vs-upwork` | **Critical** | Upwork changed to a flat 10% fee for all freelancers in May 2023, removing the tiered 20%/10%/5% structure. The comparison table and FAQ still describe the old tiered system. The key differentiator stated in the verdict is now wrong. |
-| 3 | `freshbooks-vs-quickbooks-self-employed` | **Significant** | FreshBooks Lite price listed as $17/mo. FreshBooks updated pricing in 2024; Lite is now $19/mo. FAQ also says Plus plan is $30/mo (now $33/mo). |
-| 4 | `bonsai-vs-freshbooks` | **Significant** | FreshBooks Lite listed as $17/mo in both the row and FAQ. Should be $19/mo. |
-| 5 | `freshbooks-vs-wave` | **Significant** | FreshBooks Lite listed as $17/mo. Should be $19/mo. Also Wave's free model changed in 2023 — Wave introduced paid tiers, and some features that were free are now behind a paywall. |
-| 6 | `freshbooks-vs-quickbooks-self-employed` | **Moderate** | QuickBooks SE price listed as $15/mo. QuickBooks Solopreneur (the replacement product) is priced at $20/mo. |
-| 7 | `wise-vs-paypal-freelancers` | **Moderate** | Wise multi-currency account listed as supporting "50+ currencies". Wise supports holding balances in 40+ currencies (not 50+). Overstated. |
-| 8 | `wise-vs-paypal-freelancers` | **Moderate** | FAQ says Wise offers "local bank details in 10+ currencies". Wise now offers local receiving details in 20+ currencies. Understated. |
-| 9 | `deel-vs-remote-contractors` | **Moderate** | Deel contractor fee listed as "$49/contractor/mo". Deel restructured pricing in 2024; verify current rate. ⚠️ Needs live check. |
-| 10 | `freelance-vs-full-time-salary` | **Minor** | Health insurance row says "$300-700/mo". US marketplace health insurance averages are higher in 2026; realistic range is $400-900/mo for comprehensive individual coverage. |
-| 11 | `toggl-vs-harvest` | **Minor** | Toggl Track free plan description in table says "1 workspace". Toggl's free plan actually allows multiple workspaces (though with some limits). Minor overstatement of restriction. |
-| 12 | `freshbooks-vs-quickbooks-self-employed` | **Minor** | FreshBooks row says "No" for mileage tracking. FreshBooks added mileage tracking to its mobile app in 2023. |
-| 13 | `fiverr-vs-upwork` | **Minor** | Upwork "Connects" bidding system (introduced 2022, expanded 2023) is not mentioned anywhere. This is a meaningful friction point for new freelancers that affects the "best for beginners" comparison. |
+| # | Page | Severity | Issue | Status |
+|---|---|---|---|---|
+| 1 | `freshbooks-vs-quickbooks-self-employed` | **Critical** | QuickBooks Self-Employed was discontinued and migrated to "QuickBooks Solopreneur" in 2024. The entire comparison refers to a product that no longer exists under that name. | ✅ Fixed |
+| 2 | `fiverr-vs-upwork` | **Critical** | Upwork changed to a flat 10% fee for all freelancers in May 2023, removing the tiered 20%/10%/5% structure. Table and FAQ described the old system. | ✅ Fixed |
+| 3 | `freshbooks-vs-quickbooks-self-employed` | **Significant** | FreshBooks Lite listed as $17/mo (now $19/mo). Plus plan $30 → $33/mo. | ✅ Fixed |
+| 4 | `bonsai-vs-freshbooks` | **Significant** | FreshBooks Lite listed as $17/mo. Should be $19/mo. | ✅ Fixed |
+| 5 | `freshbooks-vs-wave` | **Significant** | FreshBooks Lite listed as $17/mo. Wave Pro paid tier not mentioned. | ✅ Fixed |
+| 6 | `freshbooks-vs-quickbooks-self-employed` | **Moderate** | QuickBooks SE price listed as $15/mo. Solopreneur is $20/mo; winner flipped. | ✅ Fixed |
+| 7 | `wise-vs-paypal-freelancers` | **Moderate** | Wise "50+ currencies" overstated. Corrected to 40+. | ✅ Fixed |
+| 8 | `wise-vs-paypal-freelancers` | **Moderate** | FAQ "local bank details in 10+ currencies" understated. Corrected to 20+. | ✅ Fixed |
+| 9 | `deel-vs-remote-contractors` | **Moderate** | Deel $49/mo and Remote $29/mo pricing needs live verification. | ⚠️ Pending live check |
+| 10 | `freelance-vs-full-time-salary` | **Minor** | Health insurance "$300-700/mo" → corrected to "$400-900/mo". | ✅ Fixed |
+| 11 | `toggl-vs-harvest` | **Minor** | Toggl free plan "1 workspace" restriction outdated; Harvest free plan removed 2023. | ✅ Fixed |
+| 12 | `freshbooks-vs-quickbooks-self-employed` | **Minor** | FreshBooks mileage tracking added 2023 — was showing "No". | ✅ Fixed |
+| 13 | `fiverr-vs-upwork` | **Minor** | Upwork Connects bidding system not mentioned anywhere. | ✅ Fixed |
 
 **Pages that passed with no significant issues:** Hourly vs Project Pricing, Freelance vs Full-Time Salary (content is concept-based, no platform pricing to go stale).
 
