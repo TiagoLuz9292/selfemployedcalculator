@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/content/mdx";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { BlogFilter } from "@/components/blog/BlogFilter";
-import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Freelance Blog",
@@ -39,7 +38,6 @@ export default function BlogPage() {
         <BlogFilter posts={posts} />
       )}
 
-      <PartnerBlock className="mt-12" />
     </div>
   );
 }

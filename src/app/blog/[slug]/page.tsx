@@ -11,7 +11,6 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
-import { StickyPartnerBar } from "@/components/monetization/StickyPartnerBar";
 import { siteConfig } from "@/data/site";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 
@@ -62,7 +61,6 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-8">
-      <StickyPartnerBar />
       <JsonLd schema={articleSchema} />
 
       <div className="mb-6">

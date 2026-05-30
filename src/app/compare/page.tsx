@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { comparisons } from "@/data/comparisons";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -91,7 +90,6 @@ export default function ComparePage() {
         </div>
       )}
 
-      <PartnerBlock className="mt-12" />
     </div>
   );
 }

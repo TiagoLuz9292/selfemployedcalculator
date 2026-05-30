@@ -9,7 +9,6 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
-import { StickyPartnerBar } from "@/components/monetization/StickyPartnerBar";
 import { siteConfig } from "@/data/site";
 
 interface PageProps {
@@ -68,7 +67,6 @@ export default async function GlossaryTermPage({ params }: PageProps) {
   return (
     <div className="container mx-auto max-w-3xl px-4 py-12">
       <JsonLd schema={definedTermSchema} />
-      <StickyPartnerBar />
       <div className="mb-6">
         <Breadcrumbs
           items={[

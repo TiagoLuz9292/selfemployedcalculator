@@ -6,7 +6,6 @@ import { categories, getCategoryBySlug } from "@/data/categories";
 import { calculators } from "@/data/calculators";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
-import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -84,7 +83,6 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       )}
 
-      <PartnerBlock className="mt-12" />
     </div>
   );
 }

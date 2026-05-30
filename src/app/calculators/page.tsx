@@ -3,7 +3,6 @@ import { calculators } from "@/data/calculators";
 import { categories } from "@/data/categories";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { CalculatorSearch } from "@/components/calculators/CalculatorSearch";
-import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Free Freelance Calculators",
@@ -48,7 +47,6 @@ export default function CalculatorsPage() {
       </div>
 
       <CalculatorSearch calculators={clientCalcs} categories={clientCats} />
-      <PartnerBlock className="mt-12" />
     </div>
   );
 }
