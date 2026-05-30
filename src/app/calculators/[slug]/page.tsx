@@ -16,6 +16,7 @@ import { RelatedPosts } from "@/components/content/RelatedPosts";
 import { KeyTermsBlock } from "@/components/content/KeyTermsBlock";
 import { AdSlot } from "@/components/monetization/AdSlot";
 import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
+import { CATEGORY_PARTNERS } from "@/data/affiliates";
 import { getRelatedPosts } from "@/lib/content/relatedPosts";
 
 interface PageProps {
@@ -52,18 +53,7 @@ export default async function CalculatorPage({ params }: PageProps) {
     "freelance-take-home-pay-calculator",
   ]);
 
-  const AFFILIATE_PREFIXES: Record<string, string> = {
-    "freshbooks": "freshbooks",
-    "bonsai": "bonsai",
-    "invoice": "freshbooks",
-    "vat": "freshbooks",
-    "self-employment": "quickbooks",
-    "quarterly": "quickbooks",
-    "freelance-take-home": "freshbooks",
-  };
-  const featuredPartner = Object.entries(AFFILIATE_PREFIXES).find(([prefix]) =>
-    slug.startsWith(prefix)
-  )?.[1];
+  const partners = CATEGORY_PARTNERS[calc.category];
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
@@ -92,7 +82,8 @@ export default async function CalculatorPage({ params }: PageProps) {
       </Suspense>
 
       <PartnerBlock
-        featuredKeys={featuredPartner ? [featuredPartner] : undefined}
+        featuredKeys={partners?.featured}
+        secondaryKeys={partners?.secondary}
         className="mt-8"
       />
 

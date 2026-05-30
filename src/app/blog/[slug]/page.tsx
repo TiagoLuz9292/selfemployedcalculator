@@ -11,6 +11,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
+import { CATEGORY_PARTNERS } from "@/data/affiliates";
 import { siteConfig } from "@/data/site";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 
@@ -46,6 +47,8 @@ export default async function BlogPostPage({ params }: PageProps) {
   const relatedComparisons = (post.relatedComparisonSlugs ?? [])
     .map((s) => getComparisonBySlug(s))
     .filter(Boolean);
+
+  const partners = CATEGORY_PARTNERS[post.category];
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -165,7 +168,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
       )}
 
-      <PartnerBlock className="mt-10" />
+      <PartnerBlock featuredKeys={partners?.featured} secondaryKeys={partners?.secondary} className="mt-10" />
 
       <div className="mt-12 pt-8 border-t border-border">
         <Link

@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { FaqSection } from "@/components/content/FaqSection";
 import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
+import { COMPARE_CATEGORY_PARTNERS } from "@/data/affiliates";
 import { CheckCircle2, MinusCircle } from "lucide-react";
 
 interface PageProps {
@@ -52,10 +53,7 @@ export default async function ComparisonPage({ params }: PageProps) {
     .map((s) => getComparisonBySlug(s))
     .filter(Boolean);
 
-  const featuredPartnerKeys = [
-    comp.entityA.toLowerCase().replace(/\s+/g, ""),
-    comp.entityB.toLowerCase().replace(/\s+/g, ""),
-  ];
+  const partners = COMPARE_CATEGORY_PARTNERS[comp.category ?? "strategy"];
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-10">
@@ -109,7 +107,7 @@ export default async function ComparisonPage({ params }: PageProps) {
         <p className="text-muted-foreground leading-relaxed text-sm">{comp.verdict}</p>
       </div>
 
-      <PartnerBlock featuredKeys={featuredPartnerKeys} className="mb-10" />
+      <PartnerBlock featuredKeys={partners?.featured} secondaryKeys={partners?.secondary} className="mb-10" />
 
       {comp.faqs && comp.faqs.length > 0 && (
         <FaqSection faqs={comp.faqs} />

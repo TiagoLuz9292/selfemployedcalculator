@@ -196,32 +196,57 @@ These are B2B products or programs that explicitly want traffic data before appr
 
 ---
 
-## After Approval — How to Add a New Affiliate to the Code
+## Contextual Placement — Which Affiliates Appear Where
+
+**Do not show all affiliates on every page.** Each page shows only the 2–4 most relevant partners for
+the user's current intent. A visitor on a quarterly tax calculator is in "filing" mode — TurboTax and
+H&R Block are highly relevant; Toggl is noise. Contextual placement = higher click-through and a block
+that doesn't look like a generic ad banner.
+
+The mapping lives in `src/data/affiliates.ts` under three exported constants:
+
+| Constant | Used by |
+|---|---|
+| `CATEGORY_PARTNERS` | `/calculators/[slug]` and `/blog/[slug]` pages, keyed by category slug |
+| `COMPARE_CATEGORY_PARTNERS` | `/compare/[slug]` pages, keyed by comparison category |
+| `GLOSSARY_TERM_CATEGORY` | `/glossary/[term]` pages — maps term slug → category slug, then uses `CATEGORY_PARTNERS` |
+
+The home page (`/`) uses the `PartnerBlock` default (no keys passed), which shows a curated cross-category set.
+
+**Current category → affiliate mapping:**
+
+| Category | Featured (large buttons) | Secondary (small pills) |
+|---|---|---|
+| `rate-pricing` | FreshBooks, Bonsai | HoneyBook, QuickBooks |
+| `income-tax` | TurboTax, H&R Block | QuickBooks, Wave |
+| `client-projects` | FreshBooks, Bonsai | HoneyBook, Wave |
+| `business-health` | Toggl, Harvest | FreshBooks, Bonsai |
+| `financial-planning` | Mercury, Wave | Relay, FreshBooks |
+| `international` | Deel, Remote | Wise, Mercury |
+
+Partners with empty placeholder URLs are silently hidden — the button only appears once the real tracking URL is set.
+
+---
+
+## After Approval — How to Add a New Affiliate URL
+
+**Every time you get an approved affiliate tracking URL, give it to Claude Code and it will replace
+the placeholder automatically.** Just say something like:
+
+> "I got approved for TurboTax — here's the link: https://turbotax.intuit.com/?cjaffid=YOUR_ID"
+
+Claude Code will find the matching key in `src/data/affiliates.ts` and replace the placeholder.
+The button will then appear on all relevant pages on next deploy.
+
+**Manual steps (if doing it yourself):**
 
 1. Get your unique tracking URL from the program's dashboard
 2. Open `src/data/affiliates.ts`
-3. Add or replace the entry:
+3. Find the key (e.g. `turbotax`) and replace the empty string `""` or placeholder URL with your tracking URL:
 
 ```ts
-export const affiliateLinks: Record<string, string> = {
-  freshbooks:  "https://www.freshbooks.com/partner/YOUR_ID",
-  quickbooks:  "https://quickbooks.intuit.com/?ref=YOUR_ID",
-  bonsai:      "https://www.hellobonsai.com/r/YOUR_ID",
-  wise:        "https://wise.com/invite/YOUR_ID",
-  deel:        "https://www.deel.com/signup?ref=YOUR_ID",
-  honeybook:   "https://www.honeybook.com/r/YOUR_ID",      // add when approved
-  turbotax:    "https://turbotax.intuit.com/?ref=YOUR_ID", // add when approved
-  hrblock:     "https://www.hrblock.com/?ref=YOUR_ID",     // add when approved
-  toggl:       "https://toggl.com/track/?ref=YOUR_ID",     // add when approved
-  harvest:     "https://www.getharvest.com/?ref=YOUR_ID",  // add when approved
-  mercury:     "https://mercury.com/r/YOUR_ID",            // add when approved
-  wave:        "https://www.waveapps.com/r/YOUR_ID",       // add when approved
-  relay:       "https://relayfi.com/r/YOUR_ID",            // add when approved
-  remote:      "https://remote.com/r/YOUR_ID",             // add when approved
-  honeybook:   "https://www.honeybook.com/r/YOUR_ID",      // add when approved
-};
+turbotax: "https://turbotax.intuit.com/?cjaffid=YOUR_ID",
 ```
 
-4. The `rel="sponsored"` attribute is already on all affiliate links — do not remove it.
-5. Wire the new key into `AffiliateBlock.tsx` if the new program needs its own card.
-6. Push and deploy.
+4. The `rel="sponsored"` attribute is already on all affiliate links in `AffiliateBlock.tsx` — do not remove it.
+5. Push and deploy — the button appears automatically on all pages where that key is in `CATEGORY_PARTNERS`.

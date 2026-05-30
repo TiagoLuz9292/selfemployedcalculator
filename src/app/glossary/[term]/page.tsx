@@ -9,6 +9,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { PartnerBlock } from "@/components/monetization/AffiliateBlock";
+import { CATEGORY_PARTNERS, GLOSSARY_TERM_CATEGORY } from "@/data/affiliates";
 import { siteConfig } from "@/data/site";
 
 interface PageProps {
@@ -40,6 +41,9 @@ export default async function GlossaryTermPage({ params }: PageProps) {
     .map((s) => getCalculatorBySlug(s))
     .filter((c): c is NonNullable<typeof c> => c !== undefined)
     .slice(0, 3);
+
+  const termCategory = GLOSSARY_TERM_CATEGORY[entry.slug];
+  const partners = termCategory ? CATEGORY_PARTNERS[termCategory] : undefined;
 
   const relatedTermEntries = (entry.relatedTerms ?? [])
     .map((s) => getTermBySlug(s))
@@ -144,7 +148,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         </section>
       )}
 
-      <PartnerBlock className="mt-12" />
+      <PartnerBlock featuredKeys={partners?.featured} secondaryKeys={partners?.secondary} className="mt-12" />
     </div>
   );
 }
