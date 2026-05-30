@@ -49,9 +49,11 @@ export default async function CategoryPage({ params }: PageProps) {
       <div className="mb-10">
         <div className="text-3xl mb-3">{category.icon}</div>
         <h1 className="text-3xl font-bold tracking-tight mb-3">{category.name} Calculators</h1>
-        <p className="text-muted-foreground leading-relaxed max-w-xl">{category.description}</p>
+        <p className="text-muted-foreground leading-relaxed max-w-2xl mb-4">{category.description}</p>
         {category.intro && (
-          <p className="text-sm text-muted-foreground mt-2 italic">{category.intro}</p>
+          <div className="rounded-xl border border-border bg-card p-5 max-w-2xl">
+            <p className="text-sm text-muted-foreground leading-relaxed">{category.intro}</p>
+          </div>
         )}
       </div>
 

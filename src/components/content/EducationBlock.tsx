@@ -3,13 +3,26 @@ interface EducationBlockProps {
   body: string;
 }
 
-// TODO: Add [pattern, glossary-slug] pairs to auto-link terms in education blocks.
-// Longer/more-specific phrases must come before shorter ones to avoid partial matches.
-// Terms must exist in src/data/glossary.ts.
-// Example:
-//   [/\bcustomer lifetime value\b/gi, "ltv"],
-//   [/\bchurn rate\b/gi, "churn-rate"],
-const GLOSSARY_MAP: [RegExp, string][] = [];
+// Auto-links the first occurrence of each term in education block body text.
+// Ordered longest-first to prevent partial matches (e.g. "self-employment tax" before "tax").
+const GLOSSARY_MAP: [RegExp, string][] = [
+  [/\bself[- ]employment tax\b/gi,     "self-employment-tax"],
+  [/\bquarterly estimated tax\b/gi,    "quarterly-estimated-tax"],
+  [/\bvalue[- ]based pricing\b/gi,     "value-based-pricing"],
+  [/\bclient profitability\b/gi,       "client-profitability"],
+  [/\btake[- ]home pay\b/gi,           "take-home-pay"],
+  [/\butilization rate\b/gi,           "utilization-rate"],
+  [/\bbillable hours\b/gi,             "billable-hours"],
+  [/\bprofit margin\b/gi,              "profit-margin"],
+  [/\bemergency fund\b/gi,             "emergency-fund"],
+  [/\bscope creep\b/gi,                "scope-creep"],
+  [/\bbreak[- ]even\b/gi,              "break-even"],
+  [/\bhourly rate\b/gi,                "hourly-rate"],
+  [/\bday rate\b/gi,                   "day-rate"],
+  [/\bnet income\b/gi,                 "net-income"],
+  [/\boverhead\b/gi,                   "overhead"],
+  [/\bretainer\b/gi,                   "retainer"],
+];
 
 function linkGlossaryTerms(text: string): string {
   let result = text;

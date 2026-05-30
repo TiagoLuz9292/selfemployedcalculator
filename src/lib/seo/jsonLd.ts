@@ -41,6 +41,35 @@ export function buildBreadcrumbSchema(items: BreadcrumbItem[]): Record<string, u
   };
 }
 
+export function buildHowToSchema(calc: CalculatorMeta): Record<string, unknown> {
+  const steps = calc.fields
+    .filter((f) => f.type !== "hidden")
+    .map((f, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: f.label,
+      text: f.helpText
+        ? `${f.helpText}`
+        : `Enter your ${f.label.toLowerCase()}${f.unit ? ` in ${f.unit}` : ""}.`,
+    }));
+
+  steps.push({
+    "@type": "HowToStep",
+    position: steps.length + 1,
+    name: "Read your results",
+    text: "Your results appear instantly on the right. All calculations run in your browser — no data is sent to any server.",
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to use the ${calc.name}`,
+    description: calc.description,
+    tool: [{ "@type": "HowToTool", name: calc.name }],
+    step: steps,
+  };
+}
+
 export function buildWebsiteSchema(): Record<string, unknown> {
   return {
     "@context": "https://schema.org",

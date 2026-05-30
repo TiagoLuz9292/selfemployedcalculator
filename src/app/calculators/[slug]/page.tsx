@@ -5,7 +5,7 @@ import Link from "next/link";
 import { calculators, getCalculatorBySlug, getRelatedCalculators } from "@/data/calculators";
 import { getComparisonBySlug } from "@/data/comparisons";
 import { buildCalculatorMetadata } from "@/lib/seo/metadata";
-import { buildCalculatorSchema } from "@/lib/seo/jsonLd";
+import { buildCalculatorSchema, buildHowToSchema } from "@/lib/seo/jsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
@@ -44,6 +44,14 @@ export default async function CalculatorPage({ params }: PageProps) {
     .map((s) => getComparisonBySlug(s))
     .filter(Boolean);
 
+  const HOWTO_SLUGS = new Set([
+    "freelance-hourly-rate-calculator",
+    "self-employment-tax-calculator",
+    "1099-tax-calculator",
+    "quarterly-tax-calculator",
+    "freelance-take-home-pay-calculator",
+  ]);
+
   const AFFILIATE_PREFIXES: Record<string, string> = {
     "freshbooks": "freshbooks",
     "bonsai": "bonsai",
@@ -60,6 +68,7 @@ export default async function CalculatorPage({ params }: PageProps) {
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
       <JsonLd schema={buildCalculatorSchema(calc)} />
+      {HOWTO_SLUGS.has(slug) && <JsonLd schema={buildHowToSchema(calc)} />}
 
       <div className="mb-6">
         <Breadcrumbs
