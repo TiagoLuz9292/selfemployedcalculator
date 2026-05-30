@@ -40,6 +40,7 @@ export interface CalculatorMeta {
   keywords: string[];
   fields: CalculatorField[];
   relatedSlugs: string[];
+  relatedComparisonSlugs?: string[];
   faqs: CalculatorFaq[];
   educationContent: { title: string; body: string };
   schema?: Record<string, unknown>;

@@ -69,6 +69,7 @@ export const calculators: CalculatorMeta[] = [
       },
     ],
     relatedSlugs: ["day-rate-calculator", "project-quote-calculator", "billable-hours-calculator"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing", "freelance-vs-full-time-salary"],
     faqs: [
       {
         question: "How do I calculate my freelance hourly rate?",
@@ -155,6 +156,7 @@ Finally, your rate must be sustainable, not just mathematically correct. Researc
       },
     ],
     relatedSlugs: ["freelance-hourly-rate-calculator", "retainer-rate-calculator", "project-quote-calculator"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
     faqs: [
       {
         question: "How is a day rate different from an hourly rate?",
@@ -253,6 +255,7 @@ When transitioning from hourly to day-rate billing, communicate the change as a 
       },
     ],
     relatedSlugs: ["freelance-hourly-rate-calculator", "client-profitability-calculator", "profit-margin-calculator"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing", "bonsai-vs-freshbooks"],
     faqs: [
       {
         question: "What complexity buffer should I use?",
@@ -338,6 +341,7 @@ The resulting quote reflects the true cost of delivering the project. Present it
       },
     ],
     relatedSlugs: ["day-rate-calculator", "freelance-hourly-rate-calculator", "client-profitability-calculator"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing", "bonsai-vs-freshbooks"],
     faqs: [
       {
         question: "What discount should I offer for a retainer?",
@@ -418,6 +422,7 @@ Review your retainers quarterly. If a client consistently uses all their hours a
       },
     ],
     relatedSlugs: ["freelance-hourly-rate-calculator", "project-quote-calculator", "profit-margin-calculator"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
     faqs: [
       {
         question: "What is value-based pricing for freelancers?",
@@ -499,6 +504,7 @@ Value-based pricing requires confidence and track record. Start by applying it t
       },
     ],
     relatedSlugs: ["freelance-take-home-pay-calculator", "quarterly-tax-calculator", "freelance-hourly-rate-calculator"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary", "freshbooks-vs-quickbooks-self-employed"],
     faqs: [
       {
         question: "What is self-employment tax?",
@@ -562,6 +568,7 @@ The most effective way to reduce SE tax is through legitimate business deduction
       { id: "retirementContribution", label: "Monthly Retirement Contribution", type: "number", unit: "$/mo", min: 0, defaultValue: 500, helpText: "Monthly contributions to SEP-IRA, Solo 401k, etc." },
     ],
     relatedSlugs: ["self-employment-tax-calculator", "quarterly-tax-calculator", "profit-margin-calculator"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
     faqs: [
       {
         question: "Why is freelance take-home so much lower than gross revenue?",
@@ -622,6 +629,7 @@ Health insurance is the second major variable. Employer-sponsored coverage is of
       { id: "alreadyPaidThisYear", label: "Already Paid This Year", type: "number", unit: "$", min: 0, defaultValue: 0, helpText: "Quarterly payments already made this tax year" },
     ],
     relatedSlugs: ["self-employment-tax-calculator", "freelance-take-home-pay-calculator", "emergency-fund-calculator"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed"],
     faqs: [
       {
         question: "When are quarterly tax payments due?",
@@ -704,6 +712,7 @@ Set up automatic transfers to a dedicated tax savings account every time a clien
       },
     ],
     relatedSlugs: ["invoice-total-calculator", "freelance-take-home-pay-calculator", "self-employment-tax-calculator"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed", "wise-vs-paypal-freelancers"],
     faqs: [
       {
         question: "When do freelancers need to charge VAT?",
@@ -760,6 +769,7 @@ For international B2B clients within the EU, the reverse charge mechanism usuall
       { id: "operatingExpenses", label: "Annual Operating Expenses", type: "number", unit: "$", min: 0, defaultValue: 15000, helpText: "All other business costs: software, insurance, marketing, accounting, equipment" },
     ],
     relatedSlugs: ["freelance-hourly-rate-calculator", "billable-hours-calculator", "break-even-calculator"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
     faqs: [
       {
         question: "What is a good profit margin for a freelancer?",
@@ -817,6 +827,7 @@ The fastest way to improve your margin is to raise rates — a 10% increase in y
       { id: "adminTimePct", label: "Admin Time %", type: "number", unit: "%", min: 0, max: 50, defaultValue: 20, helpText: "% of working time on non-billable admin, sales, invoicing. 15-30% is typical." },
     ],
     relatedSlugs: ["freelance-hourly-rate-calculator", "utilization-rate-calculator", "profit-margin-calculator"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
     faqs: [
       {
         question: "How many billable hours per week is sustainable?",
@@ -871,6 +882,7 @@ Track your actual billable hours weekly. The gap between target and actual is yo
       { id: "totalWorkingHours", label: "Total Working Hours (this period)", type: "number", unit: "hrs", min: 1, defaultValue: 176, helpText: "Total hours worked including admin, sales, etc. (typical full month = 176 hrs)" },
     ],
     relatedSlugs: ["billable-hours-calculator", "profit-margin-calculator", "break-even-calculator"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
     faqs: [
       {
         question: "What is a good utilization rate for freelancers?",
@@ -926,6 +938,7 @@ Low utilization often signals one of three issues: too much time on admin (fixab
       { id: "variableCostPct", label: "Variable Cost %", type: "number", unit: "%", min: 0, max: 30, defaultValue: 10, helpText: "Costs that scale with revenue: payment processing (2-3%), subcontractor fees, etc." },
     ],
     relatedSlugs: ["profit-margin-calculator", "billable-hours-calculator", "freelance-take-home-pay-calculator"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
     faqs: [
       {
         question: "What should I include in monthly fixed costs?",
@@ -985,6 +998,7 @@ Review your break-even every quarter. As expenses change or rates increase, your
       { id: "nonBillableTime", label: "Non-Billable Hours on This Client", type: "number", unit: "hrs", min: 0, defaultValue: 5, helpText: "Emails, meetings, admin, revisions not billed. Be honest here." },
     ],
     relatedSlugs: ["project-quote-calculator", "profit-margin-calculator", "billable-hours-calculator"],
+    relatedComparisonSlugs: ["bonsai-vs-freshbooks"],
     faqs: [
       {
         question: "How do I find out how much non-billable time I spend on a client?",
@@ -1040,6 +1054,7 @@ The goal isn't to fire every low-rate client — some provide referrals, portfol
       { id: "annualInterestRate", label: "Annual Interest Rate", type: "number", unit: "%", min: 0.1, defaultValue: 8, helpText: "UK statutory rate: ~13% (8% + Bank of England base). US: often 18%/year in contracts." },
     ],
     relatedSlugs: ["invoice-total-calculator", "client-profitability-calculator", "project-quote-calculator"],
+    relatedComparisonSlugs: ["bonsai-vs-freshbooks", "wise-vs-paypal-freelancers"],
     faqs: [
       {
         question: "Can I really charge interest on late invoices?",
@@ -1096,6 +1111,7 @@ Prevention is still better than cure: require deposits on new clients, include c
       { id: "depositPaid", label: "Deposit Already Paid", type: "number", unit: "$", min: 0, defaultValue: 0, helpText: "Upfront deposit or previous partial payment to deduct" },
     ],
     relatedSlugs: ["vat-calculator-freelancer", "late-payment-interest-calculator", "client-profitability-calculator"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed", "bonsai-vs-freshbooks", "wise-vs-paypal-freelancers"],
     faqs: [
       {
         question: "What should I include as a subtotal on a freelance invoice?",
@@ -1152,6 +1168,7 @@ Use invoicing software (FreshBooks, Bonsai, Wave, or even basic tools like Invoi
       { id: "currentSavings", label: "Current Emergency Fund Balance", type: "number", unit: "$", min: 0, defaultValue: 5000, helpText: "Liquid savings in a dedicated emergency fund account" },
     ],
     relatedSlugs: ["freelance-take-home-pay-calculator", "savings-rate-calculator", "break-even-calculator"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
     faqs: [
       {
         question: "How much emergency fund do freelancers need?",
@@ -1209,6 +1226,7 @@ A fully funded emergency fund is the most valuable investment a freelancer can m
       { id: "targetSavingsRate", label: "Target Savings Rate", type: "number", unit: "%", min: 0, max: 80, defaultValue: 20, helpText: "20% is a common starting target. 30%+ accelerates wealth building." },
     ],
     relatedSlugs: ["emergency-fund-calculator", "retirement-contribution-calculator", "freelance-take-home-pay-calculator"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
     faqs: [
       {
         question: "What is a good savings rate for a freelancer?",
@@ -1274,6 +1292,7 @@ Track your savings rate monthly. When you've had several high-income months, you
       { id: "age", label: "Your Age", type: "number", unit: "yrs", min: 18, max: 80, defaultValue: 35, helpText: "Age 50+ qualifies for catch-up contributions" },
     ],
     relatedSlugs: ["savings-rate-calculator", "self-employment-tax-calculator", "freelance-take-home-pay-calculator"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
     faqs: [
       {
         question: "What's the difference between SEP-IRA and Solo 401(k)?",
@@ -1330,6 +1349,7 @@ Start small if you must — even $200/month into a SEP-IRA grows significantly o
       { id: "savingsGoal", label: "Annual Savings Goal", type: "number", unit: "$", min: 0, defaultValue: 10000, helpText: "Emergency fund, retirement contributions, or other savings you want to set aside" },
     ],
     relatedSlugs: ["freelance-hourly-rate-calculator", "billable-hours-calculator", "savings-rate-calculator"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary", "hourly-vs-project-pricing"],
     faqs: [
       {
         question: "How do I calculate how much I need to earn as a freelancer?",
@@ -1363,6 +1383,444 @@ Now gross it up for taxes. Divide the net requirement by (1 minus your effective
 Finally, connect this to your hourly rate: divide your gross revenue target by your realistic annual billable hours. If you can bill 1,500 hours per year and need $114,286, your minimum rate is $76/hr. Anything below this and you're not funding your complete financial picture.
 
 This backward calculation is more motivating than arbitrary rate-setting because it directly connects every hour you bill to a real life goal.`,
+    },
+  },
+
+  // ─── 1099 TAX CALCULATOR ────────────────────────────────────────────────────
+  {
+    slug: "1099-tax-calculator",
+    name: "1099 Tax Calculator",
+    shortName: "1099 Tax Calculator",
+    description: "Calculate your federal and state taxes on 1099 income. See your quarterly payment amounts, total tax burden, and estimated take-home pay as a 1099 contractor.",
+    longDescription: "Estimate exactly how much tax you owe on your 1099 contract income, including self-employment tax, federal income tax, and state tax. Get your quarterly estimated payment amounts.",
+    category: "income-tax",
+    keywords: [
+      "1099 tax calculator",
+      "1099 contractor tax calculator",
+      "how much tax do I owe on 1099 income",
+      "1099 self employment tax",
+      "quarterly taxes 1099",
+      "1099 take home pay calculator",
+    ],
+    fields: [
+      {
+        id: "gross1099",
+        label: "Gross 1099 Income",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 75000,
+        helpText: "Total 1099 income before any deductions",
+      },
+      {
+        id: "businessExpenses",
+        label: "Business Expenses",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 5000,
+        helpText: "Deductible business costs: software, equipment, home office, etc.",
+      },
+      {
+        id: "filingStatus",
+        label: "Filing Status",
+        type: "select",
+        options: [
+          { label: "Single", value: "single" },
+          { label: "Married Filing Jointly", value: "married" },
+        ],
+        defaultValue: "single",
+      },
+      {
+        id: "stateTaxRate",
+        label: "State Income Tax Rate",
+        type: "number",
+        unit: "%",
+        min: 0,
+        max: 15,
+        step: 0.1,
+        defaultValue: 5,
+        helpText: "0% for TX, FL, WA, NV, SD, WY, AK. ~5% average. CA is 9.3%+.",
+      },
+      {
+        id: "otherIncome",
+        label: "Other Income (W-2, investments)",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 0,
+        helpText: "Add if you also have a part-time job or investment income",
+      },
+    ],
+    relatedSlugs: ["self-employment-tax-calculator", "quarterly-tax-calculator", "freelance-tax-deduction-calculator"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed"],
+    faqs: [
+      {
+        question: "What is the 1099 self-employment tax rate?",
+        answer: "As a 1099 contractor, you pay 15.3% self-employment tax on 92.35% of your net earnings (after business expenses). This covers Social Security (12.4%) and Medicare (2.9%). You can deduct half of SE tax from your adjusted gross income, which partially offsets the burden.",
+      },
+      {
+        question: "How is 1099 tax different from W-2 tax?",
+        answer: "With a W-2 job, your employer pays half of Social Security and Medicare (7.65%). As a 1099 contractor, you pay both halves yourself — that's the 15.3% SE tax. You do get to deduct business expenses and half of SE tax, which W-2 employees mostly cannot. Overall, 1099 income typically has a higher effective tax rate unless you have significant deductions.",
+      },
+      {
+        question: "Do I have to pay quarterly taxes on 1099 income?",
+        answer: "Yes. If you expect to owe $1,000 or more in federal taxes for the year, the IRS requires you to make quarterly estimated payments. The due dates are April 15, June 16, September 15, and January 15. Missing these results in an underpayment penalty (currently ~8% annualized on the shortfall).",
+      },
+      {
+        question: "What expenses can I deduct from 1099 income?",
+        answer: "Common 1099 deductions: home office (dedicated workspace), internet (business portion), phone (business portion), software subscriptions, equipment (Section 179 expensing), professional development, health insurance premiums, retirement contributions (SEP-IRA, Solo 401k), travel for business, and professional services fees.",
+      },
+      {
+        question: "Should I set aside money from every 1099 payment?",
+        answer: "Yes. A common rule of thumb: set aside 25-30% of every 1099 payment into a separate tax account. Pay quarterly estimates from this account. At the end of the year, the account usually has a small surplus after your actual tax bill — which becomes a buffer for next year.",
+      },
+    ],
+    educationContent: {
+      title: "How 1099 Tax Works",
+      body: `When a client pays you more than $600 in a year, they're required to send you a 1099-NEC form by January 31. This form reports your income to the IRS — and you're expected to have already paid taxes on it throughout the year via quarterly estimates.
+
+**The 1099 Tax Equation**
+
+1. Start with gross 1099 income
+2. Subtract business expenses → net self-employment income
+3. Calculate SE tax: net income × 92.35% × 15.3%
+4. Deduct half of SE tax from AGI
+5. Apply federal income tax brackets to adjusted gross income (after standard deduction)
+6. Add state income tax
+7. Divide total by 4 for quarterly payments
+
+**The Standard Deduction Reduces Your Income Tax**
+
+For 2026: $15,000 (single) or $30,000 (married filing jointly). This significantly reduces your federal income tax even before itemized deductions. Many 1099 contractors at moderate income levels pay very little federal income tax because their SE tax deduction + standard deduction wipes out most of the bracket exposure.
+
+**Why the "Set Aside 25-30%" Rule Works**
+
+For a single filer earning $75,000 in 1099 income with $5,000 in expenses: SE tax ≈ $9,700, federal income tax ≈ $7,300, and average state tax ≈ $3,500. Total: ~$20,500 on $75,000 = 27% effective rate. Setting aside 30% gives a ~$2,000 buffer.`,
+    },
+  },
+
+  // ─── SALARY TO FREELANCE RATE CALCULATOR ────────────────────────────────────
+  {
+    slug: "salary-to-freelance-rate-calculator",
+    name: "Salary to Freelance Rate Calculator",
+    shortName: "Salary → Freelance Rate",
+    description: "Convert your employee salary to the freelance hourly rate you need to charge to match your current compensation. Accounts for SE tax, benefits, and unpaid vacation.",
+    longDescription: "Going freelance from a salaried job? This calculator shows the minimum hourly rate you need to charge to replace your total employee compensation — including the taxes and benefits your employer currently subsidises.",
+    category: "rate-pricing",
+    keywords: [
+      "salary to freelance rate calculator",
+      "what hourly rate equals my salary",
+      "freelance equivalent of salary",
+      "salary to hourly freelance",
+      "how much to charge freelance to match salary",
+      "employee salary to contractor rate",
+    ],
+    fields: [
+      {
+        id: "annualSalary",
+        label: "Current Annual Salary",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 80000,
+        helpText: "Your gross salary before taxes",
+      },
+      {
+        id: "employerBenefitsValue",
+        label: "Employer Benefits Value",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 12000,
+        helpText: "Health insurance + retirement match + other benefits paid by employer. Typical range: $8,000-$20,000/year.",
+      },
+      {
+        id: "billableHoursPerWeek",
+        label: "Billable Hours per Week",
+        type: "number",
+        unit: "hrs",
+        min: 1,
+        max: 60,
+        defaultValue: 30,
+        helpText: "Hours actually billed to clients. Most freelancers bill 25-35 hours despite working 40-50.",
+      },
+      {
+        id: "vacationWeeks",
+        label: "Vacation Weeks",
+        type: "number",
+        unit: "weeks",
+        min: 0,
+        max: 12,
+        defaultValue: 4,
+        helpText: "Weeks off per year (unpaid as a freelancer)",
+      },
+      {
+        id: "overheadExpenses",
+        label: "Annual Business Expenses",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 4000,
+        helpText: "Software, equipment, accounting, insurance, etc.",
+      },
+      {
+        id: "profitBuffer",
+        label: "Profit Buffer",
+        type: "number",
+        unit: "%",
+        min: 0,
+        max: 100,
+        defaultValue: 20,
+        helpText: "Markup above break-even for savings, slow months, and growth",
+      },
+    ],
+    relatedSlugs: ["freelance-hourly-rate-calculator", "freelance-take-home-pay-calculator", "freelance-income-goal-calculator"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
+    faqs: [
+      {
+        question: "Why do I need to charge so much more than my hourly salary equivalent?",
+        answer: "Your employer salary hides significant hidden compensation. They pay half your Social Security and Medicare taxes (7.65% of salary), subsidise health insurance (often $5,000-$15,000/year), offer paid vacation (worth 8-10% of salary), and may match retirement contributions. As a freelancer, you pay all of these yourself — so your rate must cover them to truly match your employee take-home.",
+      },
+      {
+        question: "What's the standard multiplier from salary to freelance rate?",
+        answer: "A common rule of thumb is to multiply your salary-equivalent hourly rate by 1.5 to 2× to arrive at a freelance rate. So if $80,000/2,080 hours = $38/hr salary equivalent, your freelance rate should be $57-$76/hr minimum. This calculator gives you a precise number based on your specific situation.",
+      },
+      {
+        question: "How many billable hours per week is realistic?",
+        answer: "Most freelancers bill 25-35 hours per week despite working 40-50 hours. The unbillable time goes to admin, sales, invoicing, professional development, and business management. New freelancers often underestimate this. Using 30 hours/week is a conservative and common baseline.",
+      },
+      {
+        question: "Should I include my employer's retirement match?",
+        answer: "Yes — include it in the employer benefits value. A 4% match on an $80,000 salary is $3,200/year that you must now fund yourself via SEP-IRA or Solo 401k contributions. Not including it means you're accepting a real pay cut to go freelance.",
+      },
+    ],
+    educationContent: {
+      title: "Why Your Salary ÷ 2080 Hours Is Not Your Freelance Rate",
+      body: `The most common mistake new freelancers make: dividing their annual salary by 2,080 hours (52 weeks × 40 hours) and setting that as their hourly rate. This math is dangerously wrong.
+
+**What your employer actually pays for you**
+
+If you earn $80,000, your employer's total cost for you is typically $95,000-$110,000 when you include:
+- Employer share of FICA taxes: ~$6,120
+- Health insurance contribution: $5,000-$15,000/year
+- Paid vacation (3 weeks = $4,600 at $80k)
+- Retirement match (4% = $3,200)
+- Other benefits (life insurance, disability, etc.)
+
+**The billable hours problem**
+
+You don't bill 40 hours per week as a freelancer. Plan for 25-30 billable hours. The rest goes to admin, business development, invoicing, client communication, professional development, and the reality of sick days and slow weeks.
+
+**The calculation**
+
+Take total compensation you need to replace → add SE tax extra → add business overhead → divide by realistic billable hours. The result is your break-even rate. Add 15-25% for profit and slow-month buffer.
+
+For a $80,000 salary: total replacement target ≈ $108,000 / 1,560 billable hours = **$69/hr minimum**. The $38/hr you calculated from salary ÷ 2,080 would leave you earning less than you did as an employee.`,
+    },
+  },
+
+  // ─── FREELANCE TAX DEDUCTION CALCULATOR ─────────────────────────────────────
+  {
+    slug: "freelance-tax-deduction-calculator",
+    name: "Freelance Tax Deduction Calculator",
+    shortName: "Tax Deduction Calculator",
+    description: "Calculate your freelance tax deductions and see how much you can save. Enter your home office, internet, software, equipment, and other expenses to estimate your deductible amount.",
+    longDescription: "Find out exactly how much of your freelance business expenses are tax-deductible and how much you'll save at your marginal rate. Covers home office, internet, phone, software, equipment, health insurance, retirement, and travel.",
+    category: "income-tax",
+    keywords: [
+      "freelance tax deduction calculator",
+      "what can freelancers deduct",
+      "self employed tax deductions",
+      "home office deduction calculator",
+      "1099 deductions calculator",
+      "freelancer tax write offs",
+    ],
+    fields: [
+      {
+        id: "grossIncome",
+        label: "Gross Freelance Income",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 80000,
+        helpText: "Your total 1099 / freelance income before deductions",
+      },
+      {
+        id: "homeOfficeSqFt",
+        label: "Home Office Size",
+        type: "number",
+        unit: "sq ft",
+        min: 0,
+        defaultValue: 150,
+        helpText: "Square footage of your dedicated workspace (must be used exclusively for business)",
+      },
+      {
+        id: "totalHomeSqFt",
+        label: "Total Home Size",
+        type: "number",
+        unit: "sq ft",
+        min: 1,
+        defaultValue: 1000,
+        helpText: "Total square footage of your home",
+      },
+      {
+        id: "monthlyRentOrMortgage",
+        label: "Monthly Rent / Mortgage",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 1500,
+        helpText: "Your monthly housing cost (home office % is deductible)",
+      },
+      {
+        id: "internetMonthly",
+        label: "Monthly Internet Bill",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 60,
+        helpText: "Full bill — the home office % is deductible",
+      },
+      {
+        id: "phoneMonthly",
+        label: "Monthly Phone Bill",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 80,
+        helpText: "Your phone bill",
+      },
+      {
+        id: "phoneBizPct",
+        label: "Phone Business Use",
+        type: "number",
+        unit: "%",
+        min: 0,
+        max: 100,
+        defaultValue: 60,
+        helpText: "Percentage of phone use for business. 50-80% is typical.",
+      },
+      {
+        id: "softwareAnnual",
+        label: "Software & Subscriptions",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 1200,
+        helpText: "Adobe CC, Figma, Notion, Slack, cloud storage, etc. 100% deductible.",
+      },
+      {
+        id: "equipmentAnnual",
+        label: "Equipment & Hardware",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 0,
+        helpText: "Computer, monitor, desk, camera, microphone. 100% deductible via Section 179.",
+      },
+      {
+        id: "professionalDevelopment",
+        label: "Professional Development",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 500,
+        helpText: "Courses, books, conferences, certifications related to your work",
+      },
+      {
+        id: "healthInsurancePremium",
+        label: "Health Insurance Premiums",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 0,
+        helpText: "Self-employed health insurance is 100% deductible (above-the-line)",
+      },
+      {
+        id: "retirementContributions",
+        label: "Retirement Contributions",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 0,
+        helpText: "SEP-IRA (up to 25% of net income) or Solo 401k contributions",
+      },
+      {
+        id: "travelAnnual",
+        label: "Business Travel",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 0,
+        helpText: "Flights, hotels, mileage for client meetings or business trips",
+      },
+      {
+        id: "otherExpenses",
+        label: "Other Business Expenses",
+        type: "number",
+        unit: "$",
+        min: 0,
+        defaultValue: 0,
+        helpText: "Accounting fees, legal fees, business insurance, marketing, etc.",
+      },
+      {
+        id: "marginalTaxRate",
+        label: "Your Marginal Tax Rate",
+        type: "select",
+        options: [
+          { label: "22% (income $48k-$103k, single)", value: "22" },
+          { label: "24% (income $103k-$197k, single)", value: "24" },
+          { label: "32% (income $197k-$251k, single)", value: "32" },
+          { label: "12% (income $11k-$48k, single)", value: "12" },
+        ],
+        defaultValue: "22",
+        helpText: "Your highest federal tax bracket. Used to calculate the tax savings from deductions.",
+      },
+    ],
+    relatedSlugs: ["self-employment-tax-calculator", "quarterly-tax-calculator", "1099-tax-calculator"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed"],
+    faqs: [
+      {
+        question: "What is the home office deduction for freelancers?",
+        answer: "The home office deduction lets you deduct the percentage of your home used exclusively and regularly for business. Method 1 (regular): Calculate your office square footage ÷ total home square footage. Apply that percentage to rent/mortgage, utilities, and internet. Method 2 (simplified): $5 per square foot up to 300 sq ft = max $1,500. The regular method usually produces a larger deduction.",
+      },
+      {
+        question: "Can I deduct my full internet bill?",
+        answer: "No — only the business-use portion. If you work from home full-time, you might claim 80-90% of your internet bill. The IRS expects a reasonable business-use percentage. If you also have family members using the internet for personal use, a lower percentage (50-70%) is more defensible.",
+      },
+      {
+        question: "What is Section 179 and how does it help freelancers?",
+        answer: "Section 179 allows you to immediately deduct the full cost of qualifying business equipment in the year you buy it, rather than depreciating it over years. A $2,000 MacBook bought for your freelance work is 100% deductible in the year of purchase. This makes large equipment purchases much more tax-efficient.",
+      },
+      {
+        question: "Should I deduct health insurance premiums?",
+        answer: "Absolutely — this is one of the most valuable deductions for freelancers. Self-employed health insurance premiums (medical, dental, vision) are 100% deductible as an above-the-line deduction, meaning they reduce your AGI even if you don't itemize. At a 22% marginal rate, a $6,000 annual premium saves $1,320 in federal taxes.",
+      },
+      {
+        question: "How much can I contribute to a SEP-IRA?",
+        answer: "Up to 25% of your net self-employment income, capped at $69,000 for 2024 (limit adjusts annually). For someone with $80,000 in net SE income, that's up to $20,000. SEP-IRA contributions reduce your taxable income dollar-for-dollar — at a 22% rate, a $10,000 contribution saves $2,200 in federal taxes plus reduces your state tax.",
+      },
+    ],
+    educationContent: {
+      title: "The Freelancer's Guide to Tax Deductions",
+      body: `One of the biggest financial advantages of freelancing is the ability to deduct legitimate business expenses before calculating your taxable income. W-2 employees mostly cannot deduct work expenses; freelancers can deduct almost everything required to run their business.
+
+**The Big Five Deductions Most Freelancers Miss**
+
+1. **Home office** — Even a modest 150 sq ft office in a 1,000 sq ft apartment deducts 15% of rent/mortgage and utilities. At $1,500/month rent, that's $2,700/year.
+
+2. **Self-employed health insurance** — If you pay for your own health insurance, the entire premium is deductible above-the-line. This is one of the largest deductions available.
+
+3. **Retirement contributions** — A SEP-IRA lets you contribute up to 25% of net income. This both builds your retirement and lowers your current tax bill.
+
+4. **Software subscriptions** — Adobe CC ($55/mo), Figma ($15/mo), cloud storage, project management tools — all 100% deductible.
+
+5. **Professional development** — Courses, books, and conferences that maintain or improve skills required for your work are fully deductible.
+
+**Keep Records Throughout the Year**
+
+The IRS requires contemporaneous records. Use accounting software (FreshBooks, QuickBooks, Wave) to track expenses as they occur. Don't try to reconstruct a year's worth of expenses in April. A proper expense record makes your tax return faster and your deductions more defensible.`,
     },
   },
 ];

@@ -16,6 +16,7 @@ export interface Comparison {
   summary: string;
   verdict: string;
   relatedCalcSlugs: string[];
+  relatedComparisonSlugs?: string[];
   category?: string;
 }
 
@@ -36,6 +37,7 @@ export const comparisons: Comparison[] = [
       "quickbooks self employed review",
     ],
     relatedCalcSlugs: ["invoice-total-calculator", "self-employment-tax-calculator"],
+    relatedComparisonSlugs: ["bonsai-vs-freshbooks"],
     rows: [
       { feature: "Starting monthly price",       a: "$17/mo (Lite)",    b: "$15/mo",              winner: "b" },
       { feature: "Free trial",                   a: "30 days",          b: "30 days",             winner: "tie" },
@@ -71,6 +73,7 @@ export const comparisons: Comparison[] = [
       "bonsai contracts invoicing",
     ],
     relatedCalcSlugs: ["invoice-total-calculator", "client-profitability-calculator"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed"],
     rows: [
       { feature: "Starting monthly price",    a: "$21/mo",           b: "$17/mo",          winner: "b" },
       { feature: "Contracts & e-signing",     a: "Yes (built-in)",   b: "No",              winner: "a" },
@@ -106,6 +109,7 @@ export const comparisons: Comparison[] = [
       "paypal fees freelancer",
     ],
     relatedCalcSlugs: ["invoice-total-calculator", "vat-calculator-freelancer"],
+    relatedComparisonSlugs: ["deel-vs-remote-contractors"],
     rows: [
       { feature: "Exchange rate",              a: "Mid-market rate",  b: "3-4% spread",         winner: "a" },
       { feature: "Transfer fee (sending $1k)", a: "~$6-9 (0.6-0.9%)", b: "$0 (hidden in rate)", winner: "a" },
@@ -141,6 +145,7 @@ export const comparisons: Comparison[] = [
       "freelance pricing strategies",
     ],
     relatedCalcSlugs: ["freelance-hourly-rate-calculator", "project-quote-calculator"],
+    relatedComparisonSlugs: ["freelance-vs-full-time-salary"],
     rows: [
       { feature: "Income predictability",      a: "High (hours × rate)", b: "Medium (scope risk)", winner: "a" },
       { feature: "Scope creep risk",           a: "Low (billed per hour)", b: "High",             winner: "a" },
@@ -174,6 +179,7 @@ export const comparisons: Comparison[] = [
       "freelance income vs salary after tax",
     ],
     relatedCalcSlugs: ["freelance-take-home-pay-calculator", "self-employment-tax-calculator"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
     rows: [
       { feature: "Income ceiling",              a: "Uncapped",             b: "Capped by employer", winner: "a" },
       { feature: "Income stability",            a: "Variable",             b: "Predictable",         winner: "b" },
@@ -209,6 +215,7 @@ export const comparisons: Comparison[] = [
       "remote.com review contractor",
     ],
     relatedCalcSlugs: ["invoice-total-calculator", "freelance-take-home-pay-calculator"],
+    relatedComparisonSlugs: ["wise-vs-paypal-freelancers"],
     rows: [
       { feature: "Contractor fee (company pays)", a: "$49/contractor/mo", b: "$29/contractor/mo", winner: "b" },
       { feature: "Free trial",                    a: "Yes",              b: "Yes",               winner: "tie" },
@@ -226,6 +233,113 @@ export const comparisons: Comparison[] = [
       "Deel is better for speed, currency coverage, and crypto payments. Remote wins on price and deeper local compliance for EOR engagements.",
     verdict:
       "Deel is the right choice when you need fast contractor onboarding globally and want broad currency options — particularly useful if you pay contractors in less common currencies or with crypto. Remote is better when local compliance is paramount (especially for converting contractors to employees) or when you want to save ~$20/contractor/month. Both are substantial improvements over managing international contractor payments manually.",
+  },
+
+  // ─── FRESHBOOKS VS WAVE ────────────────────────────────────────────────────
+  {
+    slug: "freshbooks-vs-wave",
+    title: "FreshBooks vs Wave for Freelancers",
+    entityA: "FreshBooks",
+    entityB: "Wave",
+    category: "software",
+    description: "FreshBooks vs Wave: the paid invoicing leader vs the free alternative. Which is better for freelancers who need invoicing, expense tracking, and tax reports?",
+    keywords: [
+      "freshbooks vs wave",
+      "wave accounting vs freshbooks",
+      "free invoicing software freelancers",
+      "wave app review freelancer",
+      "freshbooks vs wave accounting",
+    ],
+    relatedCalcSlugs: ["invoice-total-calculator", "profit-margin-calculator"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed", "bonsai-vs-freshbooks"],
+    rows: [
+      { feature: "Monthly cost",              a: "$17/mo (Lite)",        b: "Free",                   winner: "b" },
+      { feature: "Invoicing",                 a: "Yes (polished)",       b: "Yes (basic)",            winner: "a" },
+      { feature: "Client limit (base plan)",  a: "5 clients",            b: "Unlimited",              winner: "b" },
+      { feature: "Expense tracking",          a: "Yes",                  b: "Yes",                    winner: "tie" },
+      { feature: "Time tracking",             a: "Yes (built-in)",       b: "No",                     winner: "a" },
+      { feature: "Double-entry accounting",   a: "Yes (Plus+)",          b: "Yes (free)",             winner: "b" },
+      { feature: "Tax reports",               a: "Yes",                  b: "Basic",                  winner: "a" },
+      { feature: "Proposals",                 a: "Yes",                  b: "No",                     winner: "a" },
+      { feature: "Recurring invoices",        a: "Yes",                  b: "Yes",                    winner: "tie" },
+      { feature: "Bank reconciliation",       a: "Yes",                  b: "Yes (free)",             winner: "b" },
+      { feature: "Payment processing fee",    a: "2.9% + $0.30",         b: "2.9% + $0.60",           winner: "a" },
+      { feature: "Mobile app",                a: "Yes (good)",           b: "Yes (basic)",            winner: "a" },
+      { feature: "Payroll",                   a: "Add-on ($20+/mo)",     b: "Paid add-on",            winner: "tie" },
+      { feature: "Customer support",          a: "Phone + chat + email", b: "Community + email only", winner: "a" },
+    ],
+    summary: "Wave is completely free and covers the basics well. FreshBooks charges monthly but offers time tracking, proposals, better mobile experience, and proper client management.",
+    verdict: "Wave is the right starting point for freelancers just getting started who need basic invoicing and expense tracking at zero cost. Once you're consistently billing $3,000+/month and spending time on admin, FreshBooks pays for itself through time savings. The key differentiators: FreshBooks has built-in time tracking (critical for hourly billing), client-facing proposals, and significantly better customer support. Wave has genuinely good double-entry accounting for free — impressive for a free tool. Start with Wave, upgrade to FreshBooks when your client volume justifies it.",
+  },
+
+  // ─── FIVERR VS UPWORK ──────────────────────────────────────────────────────
+  {
+    slug: "fiverr-vs-upwork",
+    title: "Fiverr vs Upwork for Freelancers",
+    entityA: "Fiverr",
+    entityB: "Upwork",
+    category: "platforms",
+    description: "Fiverr vs Upwork — the two biggest freelance marketplaces compared. Which platform earns more, has lower fees, and is better for your type of freelance work?",
+    keywords: [
+      "fiverr vs upwork",
+      "upwork vs fiverr which is better",
+      "fiverr or upwork for freelancers",
+      "fiverr vs upwork fees",
+      "best freelance marketplace 2026",
+    ],
+    relatedCalcSlugs: ["freelance-hourly-rate-calculator", "project-quote-calculator", "client-profitability-calculator"],
+    relatedComparisonSlugs: ["hourly-vs-project-pricing"],
+    rows: [
+      { feature: "Platform fee (your cut)",    a: "80% (20% to Fiverr)",  b: "90% (10% above $10k lifetime)", winner: "b" },
+      { feature: "Pricing model",              a: "You set fixed packages", b: "Client posts job, you bid", winner: "tie" },
+      { feature: "Who finds who",              a: "Client finds you",     b: "You bid on jobs",              winner: "tie" },
+      { feature: "Minimum order",              a: "$5 (practically $20+)", b: "No minimum",                  winner: "b" },
+      { feature: "Hourly contracts",           a: "No",                   b: "Yes (time tracking built-in)", winner: "b" },
+      { feature: "Long-term clients",          a: "Harder (gig model)",   b: "Yes (contracts)",              winner: "b" },
+      { feature: "Profile visibility",         a: "Algorithm-driven",     b: "Proposal + profile quality",   winner: "tie" },
+      { feature: "Competition at entry level", a: "Very high",            b: "Very high",                    winner: "tie" },
+      { feature: "Best for beginners",         a: "Yes (simpler setup)",  b: "Harder (proposals required)", winner: "a" },
+      { feature: "Best for high rates",        a: "Harder",               b: "Yes (hourly + contracts)",     winner: "b" },
+      { feature: "Payment protection",         a: "Yes",                  b: "Yes",                          winner: "tie" },
+      { feature: "Top earner potential",       a: "High (algorithm boost)", b: "Very high (long-term)",     winner: "b" },
+    ],
+    summary: "Fiverr uses a productised gig model where clients browse and buy packages. Upwork is a marketplace where you bid on jobs and build ongoing client relationships with hourly or fixed contracts.",
+    verdict: "These platforms suit different types of freelance work. Fiverr is better for productised, repeatable services: logo design, short copywriting, voiceovers, video editing, simple web tasks. Your packages are the product, clients buy without much back-and-forth. Upwork is better for technical, strategic, or consulting work where you want ongoing relationships, hourly billing, and the ability to build a client base over time. Upwork's top earners make significantly more because long-term clients at $50-150/hr compound over months and years. Fiverr's top earners succeed by creating highly-optimised packages that rank in search. Many successful freelancers use both: Fiverr for quick, packaged work and inbound clients, Upwork for longer-term relationships and higher-value projects.",
+  },
+
+  // ─── TOGGL VS HARVEST ──────────────────────────────────────────────────────
+  {
+    slug: "toggl-vs-harvest",
+    title: "Toggl Track vs Harvest for Freelancers",
+    entityA: "Toggl Track",
+    entityB: "Harvest",
+    category: "software",
+    description: "Toggl Track vs Harvest — comparing time tracking tools for freelancers. Which has better invoicing, reporting, and free plan for independent professionals?",
+    keywords: [
+      "toggl vs harvest",
+      "toggl track vs harvest freelancer",
+      "best time tracking software freelancer",
+      "harvest vs toggl comparison",
+      "time tracking invoicing freelancer",
+    ],
+    relatedCalcSlugs: ["billable-hours-calculator", "utilization-rate-calculator", "client-profitability-calculator"],
+    relatedComparisonSlugs: ["freshbooks-vs-quickbooks-self-employed", "bonsai-vs-freshbooks"],
+    rows: [
+      { feature: "Free plan",                   a: "Yes (unlimited tracking, 1 workspace)", b: "Yes (1 seat, 2 projects)", winner: "a" },
+      { feature: "Paid plan price",             a: "$10/seat/mo",              b: "$12/seat/mo",             winner: "a" },
+      { feature: "Time tracking UX",            a: "Excellent (fast, clean)",  b: "Good",                    winner: "a" },
+      { feature: "Built-in invoicing",          a: "No",                       b: "Yes",                     winner: "b" },
+      { feature: "Invoice from time entries",   a: "No (export to FreshBooks)", b: "Yes (direct)",            winner: "b" },
+      { feature: "Project budgets",             a: "Yes",                      b: "Yes",                     winner: "tie" },
+      { feature: "Client + project reports",    a: "Yes",                      b: "Yes (better)",            winner: "b" },
+      { feature: "Team time tracking",          a: "Yes",                      b: "Yes",                     winner: "tie" },
+      { feature: "Mobile app",                  a: "Excellent",                b: "Good",                    winner: "a" },
+      { feature: "Browser extension",           a: "Yes",                      b: "Yes",                     winner: "tie" },
+      { feature: "FreshBooks integration",      a: "Yes",                      b: "Yes",                     winner: "tie" },
+      { feature: "Forecasting",                 a: "No",                       b: "Yes (Harvest Forecast)",   winner: "b" },
+    ],
+    summary: "Toggl Track wins on UX and free plan generosity. Harvest wins if you want to invoice clients directly from your time entries without a separate invoicing tool.",
+    verdict: "If you already use FreshBooks, Bonsai, or another invoicing tool, Toggl Track is the better time tracker — cleaner interface, excellent mobile app, and a genuinely useful free plan with unlimited projects. If you want to simplify your stack and invoice clients directly from tracked time without a separate app, Harvest is the better all-in-one choice. The Harvest + Harvest Forecast combination is particularly useful for freelancers managing multiple clients who want to visualise their schedule weeks ahead. Solo freelancers just starting out: Toggl's free plan is unbeatable — track unlimited time, use it for a year, then decide if you need Harvest's invoicing.",
   },
 ];
 

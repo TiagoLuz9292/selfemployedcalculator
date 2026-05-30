@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { calculators, getCalculatorBySlug, getRelatedCalculators } from "@/data/calculators";
+import { getComparisonBySlug } from "@/data/comparisons";
 import { buildCalculatorMetadata } from "@/lib/seo/metadata";
 import { buildCalculatorSchema } from "@/lib/seo/jsonLd";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -38,6 +40,9 @@ export default async function CalculatorPage({ params }: PageProps) {
 
   const related = getRelatedCalculators(slug);
   const relatedPosts = getRelatedPosts(calc.category, undefined, 3);
+  const relatedComparisons = (calc.relatedComparisonSlugs ?? [])
+    .map((s) => getComparisonBySlug(s))
+    .filter(Boolean);
 
   const AFFILIATE_PREFIXES: Record<string, string> = {
     "freshbooks": "freshbooks",
@@ -94,6 +99,25 @@ export default async function CalculatorPage({ params }: PageProps) {
       <FaqSection faqs={calc.faqs} />
 
       <RelatedTools tools={related} />
+
+      {relatedComparisons.length > 0 && (
+        <div className="mt-8">
+          <h2 className="text-base font-semibold mb-4">Related Comparisons</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {relatedComparisons.map((comp) =>
+              comp ? (
+                <Link
+                  key={comp.slug}
+                  href={`/compare/${comp.slug}`}
+                  className="rounded-lg border border-border bg-card p-4 hover:border-primary/40 hover:bg-secondary/20 transition-all text-sm font-medium"
+                >
+                  {comp.title}
+                </Link>
+              ) : null
+            )}
+          </div>
+        </div>
+      )}
 
       <RelatedPosts posts={relatedPosts} />
     </div>

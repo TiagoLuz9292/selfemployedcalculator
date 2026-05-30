@@ -28,6 +28,9 @@ import { calcEmergencyFund } from "@/lib/calculators/emergencyFund";
 import { calcSavingsRate } from "@/lib/calculators/savingsRate";
 import { calcRetirementContribution } from "@/lib/calculators/retirementContribution";
 import { calcFreelanceIncomeGoal } from "@/lib/calculators/freelanceIncomeGoal";
+import { calc1099Tax } from "@/lib/calculators/calc1099Tax";
+import { calcSalaryToFreelanceRate } from "@/lib/calculators/salaryToFreelanceRate";
+import { calcTaxDeduction } from "@/lib/calculators/taxDeductionCalculator";
 
 const calculatorFns: Record<string, (inputs: CalculatorInputs) => CalculatorResult[]> = {
   "freelance-hourly-rate-calculator":   calcFreelanceHourlyRate,
@@ -50,6 +53,9 @@ const calculatorFns: Record<string, (inputs: CalculatorInputs) => CalculatorResu
   "savings-rate-calculator":            calcSavingsRate,
   "retirement-contribution-calculator": calcRetirementContribution,
   "freelance-income-goal-calculator":   calcFreelanceIncomeGoal,
+  "1099-tax-calculator":                calc1099Tax,
+  "salary-to-freelance-rate-calculator": calcSalaryToFreelanceRate,
+  "freelance-tax-deduction-calculator": calcTaxDeduction,
 };
 
 function buildDefaultInputs(meta: CalculatorMeta): CalculatorInputs {

@@ -5,6 +5,8 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import type { ComponentPropsWithoutRef } from "react";
 import { getAllPostSlugs, getPost } from "@/lib/content/mdx";
+import { getCalculatorBySlug } from "@/data/calculators";
+import { getComparisonBySlug } from "@/data/comparisons";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -37,6 +39,14 @@ export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) notFound();
+
+  const relatedCalcs = (post.relatedCalcSlugs ?? [])
+    .map((s) => getCalculatorBySlug(s))
+    .filter(Boolean);
+
+  const relatedComparisons = (post.relatedComparisonSlugs ?? [])
+    .map((s) => getComparisonBySlug(s))
+    .filter(Boolean);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -113,6 +123,48 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
         </div>
       </article>
+
+      {(relatedCalcs.length > 0 || relatedComparisons.length > 0) && (
+        <div className="mt-12 pt-8 border-t border-border">
+          <h2 className="text-base font-semibold mb-6">Related Tools</h2>
+          {relatedCalcs.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Calculators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {relatedCalcs.map((calc) =>
+                  calc ? (
+                    <Link
+                      key={calc.slug}
+                      href={`/calculators/${calc.slug}`}
+                      className="rounded-lg border border-border bg-card p-4 hover:border-primary/40 hover:bg-secondary/20 transition-all text-sm font-medium"
+                    >
+                      {calc.shortName}
+                    </Link>
+                  ) : null
+                )}
+              </div>
+            </div>
+          )}
+          {relatedComparisons.length > 0 && (
+            <div>
+              <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Comparisons</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {relatedComparisons.map((comp) =>
+                  comp ? (
+                    <Link
+                      key={comp.slug}
+                      href={`/compare/${comp.slug}`}
+                      className="rounded-lg border border-border bg-card p-4 hover:border-primary/40 hover:bg-secondary/20 transition-all text-sm font-medium"
+                    >
+                      {comp.title}
+                    </Link>
+                  ) : null
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       <PartnerBlock className="mt-10" />
 

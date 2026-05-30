@@ -13,6 +13,8 @@ export interface PostFrontmatter {
   keywords?: string[];
   featured?: boolean;
   featuredExchanges?: string[];
+  relatedCalcSlugs?: string[];
+  relatedComparisonSlugs?: string[];
 }
 
 export interface PostMeta extends PostFrontmatter {

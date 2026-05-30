@@ -43,6 +43,10 @@ export default async function ComparisonPage({ params }: PageProps) {
     .map((s) => getCalculatorBySlug(s))
     .filter(Boolean);
 
+  const relatedComparisons = (comp.relatedComparisonSlugs ?? [])
+    .map((s) => getComparisonBySlug(s))
+    .filter(Boolean);
+
   const featuredPartnerKeys = [
     comp.entityA.toLowerCase().replace(/\s+/g, ""),
     comp.entityB.toLowerCase().replace(/\s+/g, ""),
@@ -102,7 +106,7 @@ export default async function ComparisonPage({ params }: PageProps) {
       <PartnerBlock featuredKeys={featuredPartnerKeys} className="mb-10" />
 
       {relatedCalcs.length > 0 && (
-        <div>
+        <div className="mb-8">
           <h2 className="text-base font-semibold mb-4">Related Calculators</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {relatedCalcs.map((calc) =>
@@ -113,6 +117,25 @@ export default async function ComparisonPage({ params }: PageProps) {
                   className="rounded-lg border border-border bg-card p-4 hover:border-primary/40 hover:bg-secondary/20 transition-all text-sm font-medium"
                 >
                   {calc.shortName}
+                </Link>
+              ) : null
+            )}
+          </div>
+        </div>
+      )}
+
+      {relatedComparisons.length > 0 && (
+        <div>
+          <h2 className="text-base font-semibold mb-4">Related Comparisons</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {relatedComparisons.map((c) =>
+              c ? (
+                <Link
+                  key={c.slug}
+                  href={`/compare/${c.slug}`}
+                  className="rounded-lg border border-border bg-card p-4 hover:border-primary/40 hover:bg-secondary/20 transition-all text-sm font-medium"
+                >
+                  {c.title}
                 </Link>
               ) : null
             )}
