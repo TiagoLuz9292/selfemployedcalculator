@@ -6,6 +6,16 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "freelancecalc.io" }],
+        destination: "https://www.freelancecalc.io/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
