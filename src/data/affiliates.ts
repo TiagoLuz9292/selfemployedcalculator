@@ -5,7 +5,7 @@ export const affiliateLinks: Record<string, string> = {
   // Phase 0 — instant referral or apply now (no traffic needed)
   freshbooks:  "https://www.freshbooks.com",       // PLACEHOLDER — replace with Impact network tracking URL after approval
   bonsai:      "https://www.hellobonsai.com",       // PLACEHOLDER — replace with hellobonsai.com affiliate tracking URL after approval
-  wise:        "https://wise.com",                 // PLACEHOLDER — replace with wise.com/invite/YOUR_ID referral URL
+  wise:        "https://wise.com/invite/drhc/tiagomanuelm10",
   wave:        "https://www.waveapps.com",         // PLACEHOLDER — replace with waveapps.com affiliate URL after approval
   honeybook:   "https://www.honeybook.com",        // PLACEHOLDER — replace with honeybook.com/r/YOUR_ID after approval
   mercury:     "https://mercury.com",              // PLACEHOLDER — replace with mercury.com/r/YOUR_ID after opening account
