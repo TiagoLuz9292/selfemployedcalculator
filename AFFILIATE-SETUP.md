@@ -16,7 +16,7 @@ Every click generates zero revenue until replaced with real tracking links.
 | **FreshBooks** | ⏳ PENDING — applied via Awin network, awaiting approval |
 | **Wave** | ⛔ SKIPPED — affiliate program discontinued (Wave US/CA only, redirects PT users to Zoho) |
 | **CJ Affiliate account** | ⏳ PENDING — account created, W-8BEN submitted, Payoneer payment setup pending (Payoneer under review, ~2 business days). Once Payoneer approved, complete CJ payment info, then apply to TurboTax + H&R Block + QuickBooks |
-| **Toggl** | 🔲 TODO — apply at toggl.com/affiliates |
+| **Toggl** | ⏳ PENDING — applied via PartnerStack, awaiting approval (30% commission per first payment) |
 | **Harvest** | 🔲 TODO — apply at getharvest.com/affiliates |
 | **Relay** | 🔲 TODO — check for US-only restriction first (Mercury and HoneyBook were US-only) |
 | **Deel** | ⏸ LATER — after 3 months |
@@ -112,13 +112,11 @@ Not about traffic — about looking like a real, established site to the approva
 
 ---
 
-### 10. Toggl Track
-- **Website:** https://toggl.com/track
-- **Apply at:** https://toggl.com/affiliates (own platform)
-- **Requires application:** Yes — approves content sites without needing traffic.
-- **Commission:** $30–50 per paid account
-- **When exactly:** After 10–20 pages indexed and the billable hours / utilization rate calculator pages are live.
-- **Status in code:** Not yet in `affiliates.ts` — add after approval
+### 10. Toggl Track — ⏳ PENDING APPROVAL
+- **Network:** PartnerStack (account created at partnerstack.com)
+- **Commission:** 30% on every first payment from referred customers
+- **Payment:** PartnerStack pays via Stripe or PayPal — set up payment when commissions are ready to withdraw
+- **Status in code:** Placeholder in `affiliates.ts` — replace with PartnerStack tracking link after approval
 
 ---
 
