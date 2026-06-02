@@ -14,15 +14,22 @@ Every click generates zero revenue until replaced with real tracking links.
 | **HoneyBook** | ⛔ SKIPPED — US/Canada only |
 | **Bonsai** | ⏳ PENDING — applied, awaiting approval |
 | **FreshBooks** | ⏳ PENDING — applied via Awin network, awaiting approval |
-| **Wave** | ⛔ SKIPPED — affiliate program discontinued |
-| **CJ Affiliate** (TurboTax, H&R Block, QuickBooks) | 🔲 TODO — ready to apply (88 pages indexed) |
+| **Wave** | ⛔ SKIPPED — affiliate program discontinued (Wave US/CA only, redirects PT users to Zoho) |
+| **CJ Affiliate account** | ⏳ PENDING — account created, W-8BEN submitted, Payoneer payment setup pending (Payoneer under review, ~2 business days). Once Payoneer approved, complete CJ payment info, then apply to TurboTax + H&R Block + QuickBooks |
 | **Toggl** | 🔲 TODO — apply at toggl.com/affiliates |
 | **Harvest** | 🔲 TODO — apply at getharvest.com/affiliates |
-| **Relay** | 🔲 TODO — apply at relayfi.com/partners |
+| **Relay** | 🔲 TODO — check for US-only restriction first (Mercury and HoneyBook were US-only) |
 | **Deel** | ⏸ LATER — after 3 months |
 | **Remote.com** | ⏸ LATER — after 3 months |
 | **1Password** | ⏸ LATER — after 3 months |
-| **Wise full affiliate** | ⏸ LATER — apply at wise.com/affiliates after 30 days |
+| **Wise full affiliate** | ⏸ LATER — apply at wise.com/affiliates after 30 days (from 2026-06-02 = apply 2026-07-02) |
+
+## CJ Affiliate Setup Notes
+- Account registered at cj.com as publisher
+- W-8BEN submitted (Portuguese individual, NIF used as foreign tax ID, no treaty benefits claimed)
+- Payment method: Payoneer (required for non-US publishers — bank IBAN not accepted directly)
+- Payoneer application submitted 2026-06-02, under review (~2 business days)
+- **Next step:** When Payoneer approval email arrives, go back to CJ → Account → Payment Information and connect Payoneer, then apply to TurboTax, H&R Block, and QuickBooks advertiser programs within CJ
 
 ---
 
@@ -73,13 +80,8 @@ Every click generates zero revenue until replaced with real tracking links.
 
 ---
 
-### 6. Wave
-- **Website:** https://www.waveapps.com
-- **Apply at:** https://www.waveapps.com/partners
-- **Requires application:** Yes — but Wave is a free product so they want distribution. Accepts new sites.
-- **Commission:** Payment processing revenue share (2.9% + $0.60 per transaction processed through Wave)
-- **When exactly:** Apply now. No traffic requirement.
-- **Status in code:** Not yet in `affiliates.ts` — add after approval
+### 6. Wave — ⛔ SKIPPED (affiliate program discontinued, US/CA only)
+- Wave redirects Portuguese users to Zoho Books. No affiliate program available.
 
 ---
 
@@ -87,32 +89,25 @@ Every click generates zero revenue until replaced with real tracking links.
 
 Not about traffic — about looking like a real, established site to the approval team.
 
-### 7. TurboTax Self-Employed
-- **Website:** https://turbotax.intuit.com/self-employed
-- **Apply at:** https://turbotax.intuit.com/affiliates via CJ Affiliate — create a CJ account first at https://www.cj.com
-- **Requires application:** Yes — CJ Affiliate network, moderate selectivity. Wants an established-looking site.
+### 7. TurboTax Self-Employed — 🔲 TODO (waiting on CJ + Payoneer setup)
+- **Apply via:** CJ Affiliate account (already created) — search for TurboTax in CJ marketplace
 - **Commission:** $15–25 per paid filing
-- **When exactly:** After 15–20 pages indexed. Must be approved before October to catch tax season (Jan–April peak traffic on these pages).
-- **Status in code:** Not yet in `affiliates.ts` — add after approval
+- **Blocker:** Complete CJ payment info (Payoneer) first, then apply
+- **Status in code:** Placeholder in `affiliates.ts` — replace after approval
 
 ---
 
-### 8. H&R Block
-- **Website:** https://www.hrblock.com
-- **Apply at:** https://affiliates.hrblock.com — also via CJ Affiliate (same account as TurboTax)
-- **Requires application:** Yes — apply to both TurboTax and H&R Block at the same time via your CJ account. One application process covers both.
+### 8. H&R Block — 🔲 TODO (waiting on CJ + Payoneer setup)
+- **Apply via:** CJ Affiliate account — apply at same time as TurboTax
 - **Commission:** $15–25 per signup
-- **When exactly:** Same timing as TurboTax — apply both together after 15–20 pages indexed.
-- **Status in code:** Not yet in `affiliates.ts` — add after approval
+- **Status in code:** Placeholder in `affiliates.ts` — replace after approval
 
 ---
 
-### 9. QuickBooks Self-Employed
-- **Website:** https://quickbooks.intuit.com/self-employed
-- **Apply at:** https://www.intuit.com/partners/affiliate-program — also via CJ Affiliate (same account as TurboTax and H&R Block)
-- **Requires application:** Yes — stricter than FreshBooks. May reject new sites. Apply at the same time as TurboTax/H&R Block. If rejected, reapply at 60 days.
+### 9. QuickBooks Self-Employed — 🔲 TODO (waiting on CJ + Payoneer setup)
+- **Apply via:** CJ Affiliate account — apply at same time as TurboTax and H&R Block
 - **Commission:** $10–15 per trial
-- **When exactly:** Apply via CJ at the same time as TurboTax and H&R Block.
+- **Note:** Stricter than FreshBooks — may reject new sites, reapply at 60 days if rejected
 - **Status in code:** Placeholder in `affiliates.ts` — replace after approval
 
 ---
