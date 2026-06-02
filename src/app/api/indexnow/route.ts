@@ -5,10 +5,7 @@ import { comparisons } from "@/data/comparisons";
 import { glossaryTerms } from "@/data/glossary";
 import { getAllPosts } from "@/lib/content/mdx";
 
-// TODO: Set INDEXNOW_KEY env var to your domain's IndexNow key.
-// Generate a key at https://www.bing.com/indexnow/getstarted (or use: python3 -c "import uuid; print(uuid.uuid4().hex.upper())")
-// Then add a file public/<key>.txt containing just the key string.
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY ?? "";
+const INDEXNOW_KEY = "36081CE1F0334DB7BDA0F8BDB33FFBF0";
 
 export async function GET(request: Request) {
   const secret = process.env.CRON_SECRET;
