@@ -2,44 +2,41 @@
 // When approved, give Claude Code the tracking URL and it will replace the placeholder.
 // Using brand homepages (not empty strings) so all buttons render during pre-launch preview.
 export const affiliateLinks: Record<string, string> = {
-  // Phase 0 — instant referral or apply now (no traffic needed)
-  freshbooks:  "https://www.freshbooks.com",       // PLACEHOLDER — replace with Impact network tracking URL after approval
-  bonsai:      "https://www.hellobonsai.com",       // PLACEHOLDER — replace with hellobonsai.com affiliate tracking URL after approval
+  // Phase 0
+  freshbooks:  "https://www.freshbooks.com",    // PLACEHOLDER — replace with Awin tracking URL after approval
+  bonsai:      "https://www.hellobonsai.com",    // PLACEHOLDER — replace with Bonsai affiliate tracking URL after approval
   wise:        "https://wise.com/invite/drhc/tiagomanuelm10",
-  wave:        "https://www.waveapps.com",         // PLACEHOLDER — replace with waveapps.com affiliate URL after approval
-  honeybook:   "https://www.honeybook.com",        // SKIPPED — US/Canada only, not available to PT residents
-  // Phase 1 — after 15–20 pages indexed
-  quickbooks:  "https://quickbooks.intuit.com",    // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
-  turbotax:    "https://turbotax.intuit.com",      // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
-  hrblock:     "https://www.hrblock.com",          // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
-  toggl:       "https://toggl.com/track",          // PLACEHOLDER — replace with toggl.com affiliate tracking URL after approval
-  harvest:     "https://www.getharvest.com",       // PLACEHOLDER — replace with getharvest.com affiliate tracking URL after approval
-  relay:       "https://relayfi.com",              // PLACEHOLDER — replace with relayfi.com/r/YOUR_ID after approval
+
+  // Phase 1 — CJ Affiliate (blocked on Payoneer approval)
+  quickbooks:  "https://quickbooks.intuit.com", // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
+  turbotax:    "https://turbotax.intuit.com",   // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
+  hrblock:     "https://www.hrblock.com",       // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
+  toggl:       "https://toggl.com/track",       // PLACEHOLDER — replace with PartnerStack tracking URL after approval
 
   // Phase 2 — after 3 months
-  deel:        "https://www.deel.com",             // PLACEHOLDER — replace with deel.com affiliate tracking URL after approval
-  remote:      "https://remote.com",               // PLACEHOLDER — replace with remote.com affiliate tracking URL after approval
-  "1password": "https://1password.com",            // PLACEHOLDER — replace with 1password.com affiliate tracking URL after approval
+  deel:        "https://www.deel.com",          // PLACEHOLDER — replace with Deel affiliate tracking URL after approval
+  remote:      "https://remote.com",            // PLACEHOLDER — replace with Remote affiliate tracking URL after approval
+  "1password": "https://1password.com",         // PLACEHOLDER — replace with 1Password affiliate tracking URL after approval
 };
 
 // Contextual affiliate keys per calculator/blog category.
 // featured = large primary buttons; secondary = small pill buttons.
 // Keys with empty placeholder URLs above are silently hidden until replaced.
 export const CATEGORY_PARTNERS: Record<string, { featured: string[]; secondary: string[] }> = {
-  "rate-pricing":       { featured: ["freshbooks", "bonsai"],  secondary: ["honeybook", "quickbooks"] },
-  "income-tax":         { featured: ["turbotax", "hrblock"],   secondary: ["quickbooks", "wave"] },
-  "client-projects":    { featured: ["freshbooks", "bonsai"],  secondary: ["honeybook", "wave"] },
-  "business-health":    { featured: ["toggl", "harvest"],      secondary: ["freshbooks", "bonsai"] },
-  "financial-planning": { featured: ["wave", "relay"],         secondary: ["freshbooks", "wise"] },
-  "international":      { featured: ["deel", "remote"],        secondary: ["wise", "relay"] },
+  "rate-pricing":       { featured: ["freshbooks", "bonsai"],  secondary: ["quickbooks"] },
+  "income-tax":         { featured: ["turbotax", "hrblock"],   secondary: ["quickbooks"] },
+  "client-projects":    { featured: ["freshbooks", "bonsai"],  secondary: ["quickbooks"] },
+  "business-health":    { featured: ["toggl", "freshbooks"],   secondary: ["bonsai"] },
+  "financial-planning": { featured: ["freshbooks", "wise"],    secondary: ["turbotax", "bonsai"] },
+  "international":      { featured: ["deel", "remote"],        secondary: ["wise"] },
 };
 
 // Contextual keys for /compare pages, keyed by comparison category.
 export const COMPARE_CATEGORY_PARTNERS: Record<string, { featured: string[]; secondary: string[] }> = {
-  "software":   { featured: ["freshbooks", "bonsai"],  secondary: ["quickbooks", "wave", "honeybook"] },
-  "payments":   { featured: ["wise", "relay"],          secondary: ["deel", "remote"] },
-  "strategy":   { featured: ["freshbooks", "bonsai"],  secondary: ["quickbooks", "honeybook"] },
-  "platforms":  { featured: ["deel", "remote"],        secondary: ["honeybook", "freshbooks"] },
+  "software":   { featured: ["freshbooks", "bonsai"],  secondary: ["quickbooks"] },
+  "payments":   { featured: ["wise", "deel"],           secondary: ["remote"] },
+  "strategy":   { featured: ["freshbooks", "bonsai"],  secondary: ["quickbooks"] },
+  "platforms":  { featured: ["deel", "remote"],        secondary: ["freshbooks"] },
 };
 
 // Maps glossary term slugs → category slug for partner selection.

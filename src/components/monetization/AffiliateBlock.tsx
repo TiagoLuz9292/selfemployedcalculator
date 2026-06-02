@@ -15,28 +15,23 @@ const PARTNER_META: Record<string, { name: string; cta: string }> = {
   freshbooks:  { name: "FreshBooks",  cta: "Try FreshBooks Free" },
   bonsai:      { name: "Bonsai",      cta: "Try Bonsai Free" },
   quickbooks:  { name: "QuickBooks",  cta: "QuickBooks Self-Employed" },
-  wave:        { name: "Wave",        cta: "Try Wave Free" },
-  honeybook:   { name: "HoneyBook",   cta: "Try HoneyBook" },
   turbotax:    { name: "TurboTax",    cta: "File with TurboTax" },
   hrblock:     { name: "H&R Block",   cta: "File with H&R Block" },
   toggl:       { name: "Toggl Track", cta: "Try Toggl Free" },
-  harvest:     { name: "Harvest",     cta: "Try Harvest Free" },
   "1password": { name: "1Password",   cta: "Try 1Password" },
   wise:        { name: "Wise",        cta: "Open a Wise Account" },
-  mercury:     { name: "Mercury",     cta: "Open a Mercury Account" },
-  relay:       { name: "Relay",       cta: "Open a Relay Account" },
   deel:        { name: "Deel",        cta: "Try Deel Free" },
   remote:      { name: "Remote",      cta: "Try Remote Free" },
 };
 
 // Left panel: invoicing, tax, accounting, time tracking
-const LEFT_KEYS  = new Set(["freshbooks", "bonsai", "quickbooks", "wave", "honeybook", "turbotax", "hrblock", "toggl", "harvest", "1password"]);
+const LEFT_KEYS  = new Set(["freshbooks", "bonsai", "quickbooks", "turbotax", "hrblock", "toggl", "1password"]);
 // Right panel: banking, payments, international
-const RIGHT_KEYS = new Set(["wise", "mercury", "relay", "deel", "remote"]);
+const RIGHT_KEYS = new Set(["wise", "deel", "remote"]);
 
 // Home page defaults (no keys passed)
-const HOME_FEATURED  = ["freshbooks", "bonsai", "wise", "mercury"];
-const HOME_SECONDARY = ["quickbooks", "wave", "toggl", "deel"];
+const HOME_FEATURED  = ["freshbooks", "bonsai", "wise", "deel"];
+const HOME_SECONDARY = ["quickbooks", "toggl", "turbotax", "remote"];
 
 export function PartnerBlock({ featuredKeys, secondaryKeys, className }: PartnerBlockProps) {
   const featured  = featuredKeys  ?? HOME_FEATURED;
