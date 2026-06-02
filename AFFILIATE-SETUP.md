@@ -18,7 +18,7 @@ Every click generates zero revenue until replaced with real tracking links.
 | **CJ Affiliate account** | ⏳ PENDING — account created, W-8BEN submitted, Payoneer payment setup pending (Payoneer under review, ~2 business days). Once Payoneer approved, complete CJ payment info, then apply to TurboTax + H&R Block + QuickBooks |
 | **Toggl** | ⏳ PENDING — applied via PartnerStack, awaiting approval (30% commission per first payment) |
 | **Harvest** | ⛔ SKIPPED — affiliate program discontinued (404 on all partner pages) |
-| **Relay** | 🔲 TODO — check for US-only restriction first (Mercury and HoneyBook were US-only) |
+| **Relay** | ⛔ SKIPPED — US business banking product, partners page 404, not available to PT residents |
 | **Deel** | ⏸ LATER — after 3 months |
 | **Remote.com** | ⏸ LATER — after 3 months |
 | **1Password** | ⏸ LATER — after 3 months |
