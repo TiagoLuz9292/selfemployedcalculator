@@ -5,15 +5,24 @@ Every click generates zero revenue until replaced with real tracking links.
 
 ---
 
-## Quick Action Summary
+## Status Summary (last updated 2026-06-02)
 
-| When | Programs |
+| Program | Status |
 |---|---|
-| **Today — instant links, no approval** | Wise (referral), Mercury (referral), HoneyBook (check for referral) |
-| **Day 1 — apply now, no traffic needed** | Bonsai, FreshBooks, Wave |
-| **After 15–20 pages indexed** | TurboTax, H&R Block, QuickBooks (all via CJ Affiliate — one account covers all three) |
-| **After 20 pages indexed** | Toggl, Harvest, Relay |
-| **After 3 months** | Deel, Remote.com, 1Password |
+| **Wise** | ✅ LIVE — `wise.com/invite/drhc/tiagomanuelm10` |
+| **Mercury** | ⛔ SKIPPED — requires US-registered business |
+| **HoneyBook** | ⛔ SKIPPED — US/Canada only |
+| **Bonsai** | ⏳ PENDING — applied, awaiting approval |
+| **FreshBooks** | ⏳ PENDING — applied via Awin network, awaiting approval |
+| **Wave** | 🔲 TODO — apply at waveapps.com/partners |
+| **CJ Affiliate** (TurboTax, H&R Block, QuickBooks) | 🔲 TODO — ready to apply (88 pages indexed) |
+| **Toggl** | 🔲 TODO — apply at toggl.com/affiliates |
+| **Harvest** | 🔲 TODO — apply at getharvest.com/affiliates |
+| **Relay** | 🔲 TODO — apply at relayfi.com/partners |
+| **Deel** | ⏸ LATER — after 3 months |
+| **Remote.com** | ⏸ LATER — after 3 months |
+| **1Password** | ⏸ LATER — after 3 months |
+| **Wise full affiliate** | ⏸ LATER — apply at wise.com/affiliates after 30 days |
 
 ---
 
@@ -48,22 +57,18 @@ Every click generates zero revenue until replaced with real tracking links.
 
 ---
 
-### 4. Bonsai
+### 4. Bonsai — ⏳ PENDING APPROVAL
 - **Website:** https://www.hellobonsai.com
 - **Apply at:** https://www.hellobonsai.com/affiliate
-- **Requires application:** Yes — but approves new sites with no traffic. Apply today.
 - **Commission:** 25% recurring for 12 months on paid plans
-- **When exactly:** Day 1, before any traffic. They care about content quality, not volume.
 - **Status in code:** Placeholder in `affiliates.ts` — replace after approval
 
 ---
 
-### 5. FreshBooks
+### 5. FreshBooks — ⏳ PENDING APPROVAL (via Awin network)
 - **Website:** https://www.freshbooks.com
-- **Apply at:** https://www.freshbooks.com/partners/affiliates (runs through Impact network)
-- **Requires application:** Yes — new sites accepted. When asked for traffic estimates say "newly launched, SEO-focused, targeting freelancers."
+- **Network:** Awin (not Impact as originally planned — freshbooks.com/partners/affiliates redirects to Awin)
 - **Commission:** ~$10 per free trial signup, up to $200 per paid conversion
-- **When exactly:** Day 1. Approval usually 1–3 days.
 - **Status in code:** Placeholder in `affiliates.ts` — replace after approval
 
 ---
