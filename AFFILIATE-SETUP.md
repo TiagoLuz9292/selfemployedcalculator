@@ -19,7 +19,7 @@ Every click generates zero revenue until replaced with real tracking links.
 
 ## Phase 0 — Do Today
 
-### 1. Wise
+### 1. Wise ✓ DONE — https://wise.com/invite/drhc/tiagomanuelm10
 - **Website:** https://wise.com
 - **Referral link (instant, no approval needed):** Sign up for a free Wise personal or business account at https://wise.com — your referral link is available immediately in the dashboard. No application, no approval.
 - **Affiliate program (higher commissions, requires approval):** https://wise.com/affiliates — apply separately after 30 days for the cash-per-customer rate
@@ -29,7 +29,7 @@ Every click generates zero revenue until replaced with real tracking links.
 
 ---
 
-### 2. Mercury Bank
+### 2. Mercury Bank — SKIPPED (requires US-registered business)
 - **Website:** https://mercury.com
 - **Referral link (instant, no approval needed):** Open a free Mercury business account at https://mercury.com — referral link is available immediately in the dashboard. No application needed.
 - **Commission:** $30–50 per account opened via your link

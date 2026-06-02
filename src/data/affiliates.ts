@@ -8,8 +8,6 @@ export const affiliateLinks: Record<string, string> = {
   wise:        "https://wise.com/invite/drhc/tiagomanuelm10",
   wave:        "https://www.waveapps.com",         // PLACEHOLDER — replace with waveapps.com affiliate URL after approval
   honeybook:   "https://www.honeybook.com",        // PLACEHOLDER — replace with honeybook.com/r/YOUR_ID after approval
-  mercury:     "https://mercury.com",              // PLACEHOLDER — replace with mercury.com/r/YOUR_ID after opening account
-
   // Phase 1 — after 15–20 pages indexed
   quickbooks:  "https://quickbooks.intuit.com",    // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
   turbotax:    "https://turbotax.intuit.com",      // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
@@ -32,14 +30,14 @@ export const CATEGORY_PARTNERS: Record<string, { featured: string[]; secondary: 
   "income-tax":         { featured: ["turbotax", "hrblock"],   secondary: ["quickbooks", "wave"] },
   "client-projects":    { featured: ["freshbooks", "bonsai"],  secondary: ["honeybook", "wave"] },
   "business-health":    { featured: ["toggl", "harvest"],      secondary: ["freshbooks", "bonsai"] },
-  "financial-planning": { featured: ["mercury", "wave"],       secondary: ["relay", "freshbooks"] },
-  "international":      { featured: ["deel", "remote"],        secondary: ["wise", "mercury"] },
+  "financial-planning": { featured: ["wave", "relay"],         secondary: ["freshbooks", "wise"] },
+  "international":      { featured: ["deel", "remote"],        secondary: ["wise", "relay"] },
 };
 
 // Contextual keys for /compare pages, keyed by comparison category.
 export const COMPARE_CATEGORY_PARTNERS: Record<string, { featured: string[]; secondary: string[] }> = {
   "software":   { featured: ["freshbooks", "bonsai"],  secondary: ["quickbooks", "wave", "honeybook"] },
-  "payments":   { featured: ["wise", "mercury"],       secondary: ["relay", "deel"] },
+  "payments":   { featured: ["wise", "relay"],          secondary: ["deel", "remote"] },
   "strategy":   { featured: ["freshbooks", "bonsai"],  secondary: ["quickbooks", "honeybook"] },
   "platforms":  { featured: ["deel", "remote"],        secondary: ["honeybook", "freshbooks"] },
 };
