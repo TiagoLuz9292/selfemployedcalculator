@@ -38,7 +38,7 @@ Every click generates zero revenue until replaced with real tracking links.
 
 ---
 
-### 3. HoneyBook
+### 3. HoneyBook — SKIPPED (US/Canada only)
 - **Website:** https://www.honeybook.com
 - **Referral link (instant, lower commission):** Create a HoneyBook account — referral link likely available immediately in the dashboard. Lower commission than the affiliate program.
 - **Affiliate program (higher commissions):** https://www.honeybook.com/affiliates — apply after 10 pages indexed

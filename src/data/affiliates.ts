@@ -7,7 +7,7 @@ export const affiliateLinks: Record<string, string> = {
   bonsai:      "https://www.hellobonsai.com",       // PLACEHOLDER — replace with hellobonsai.com affiliate tracking URL after approval
   wise:        "https://wise.com/invite/drhc/tiagomanuelm10",
   wave:        "https://www.waveapps.com",         // PLACEHOLDER — replace with waveapps.com affiliate URL after approval
-  honeybook:   "https://www.honeybook.com",        // PLACEHOLDER — replace with honeybook.com/r/YOUR_ID after approval
+  honeybook:   "https://www.honeybook.com",        // SKIPPED — US/Canada only, not available to PT residents
   // Phase 1 — after 15–20 pages indexed
   quickbooks:  "https://quickbooks.intuit.com",    // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
   turbotax:    "https://turbotax.intuit.com",      // PLACEHOLDER — replace with CJ Affiliate tracking URL after approval
