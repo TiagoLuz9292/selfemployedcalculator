@@ -14,7 +14,7 @@ Every click generates zero revenue until replaced with real tracking links.
 | **HoneyBook** | ⛔ SKIPPED — US/Canada only |
 | **Bonsai** | ⏳ PENDING — applied, awaiting approval |
 | **FreshBooks** | ⏳ PENDING — applied via Awin network, awaiting approval |
-| **Wave** | 🔲 TODO — apply at waveapps.com/partners |
+| **Wave** | ⛔ SKIPPED — affiliate program discontinued |
 | **CJ Affiliate** (TurboTax, H&R Block, QuickBooks) | 🔲 TODO — ready to apply (88 pages indexed) |
 | **Toggl** | 🔲 TODO — apply at toggl.com/affiliates |
 | **Harvest** | 🔲 TODO — apply at getharvest.com/affiliates |
