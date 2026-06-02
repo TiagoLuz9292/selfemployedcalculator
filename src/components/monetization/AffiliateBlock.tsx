@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ExternalLink, FileText, Globe } from "lucide-react";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import { affiliateLinks } from "@/data/affiliates";
 
 interface PartnerBlockProps {

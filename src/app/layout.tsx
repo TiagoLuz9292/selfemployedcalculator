@@ -10,6 +10,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -86,15 +88,20 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <SpeedInsights />
-        {/* TODO: Replace CLARITY_TAG_ID with your Microsoft Clarity project ID */}
-        {/* Get it at: https://clarity.microsoft.com → New Project → your domain */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">{`
-          (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "CLARITY_TAG_ID");
-        `}</Script>
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">{`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}');
+            `}</Script>
+          </>
+        )}
       </body>
     </html>
   );

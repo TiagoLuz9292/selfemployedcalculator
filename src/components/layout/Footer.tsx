@@ -6,14 +6,22 @@ import { comparisons } from "@/data/comparisons";
 import { affiliateLinks } from "@/data/affiliates";
 import { BarChart2, ExternalLink } from "lucide-react";
 
-// TODO: Add display names for affiliate keys that appear in the footer partner row.
-// Keys must match src/data/affiliates.ts.
 const PARTNER_NAMES: Record<string, string> = {
-  freshbooks: "FreshBooks",
-  quickbooks: "QuickBooks",
-  bonsai:     "Bonsai",
-  wise:       "Wise",
-  deel:       "Deel",
+  freshbooks:  "FreshBooks",
+  quickbooks:  "QuickBooks",
+  bonsai:      "Bonsai",
+  wise:        "Wise",
+  wave:        "Wave",
+  honeybook:   "HoneyBook",
+  mercury:     "Mercury",
+  turbotax:    "TurboTax",
+  hrblock:     "H&R Block",
+  toggl:       "Toggl Track",
+  harvest:     "Harvest",
+  relay:       "Relay",
+  deel:        "Deel",
+  remote:      "Remote",
+  "1password": "1Password",
 };
 const partnerKeys = Object.keys(affiliateLinks);
 

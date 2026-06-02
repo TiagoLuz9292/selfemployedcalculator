@@ -4,12 +4,16 @@ const CATEGORY_POSTS: Record<string, string[]> = {
   "rate-pricing": [
     "how-to-calculate-freelance-hourly-rate",
     "how-to-price-a-freelance-project",
+    "how-to-raise-freelance-rates",
     "value-based-pricing-freelance-guide",
     "how-to-set-a-day-rate-consultant",
     "retainer-agreements-freelancers-guide",
   ],
   "income-tax": [
+    "self-employment-tax-guide-2026",
     "how-to-pay-quarterly-taxes-freelancer",
+    "freelance-tax-deductions-complete-list-2026",
+    "quarterly-tax-deadlines-2026",
     "vat-guide-for-freelancers",
     "freelance-vs-full-time-salary-comparison",
   ],

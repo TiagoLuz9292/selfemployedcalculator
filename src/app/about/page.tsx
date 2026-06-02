@@ -44,7 +44,7 @@ export default function AboutPage() {
         <h1 className="text-3xl font-bold tracking-tight mb-4">About Self Employed Calculator</h1>
         <p className="text-muted-foreground leading-relaxed text-base">
           Self Employed Calculator is a free toolkit for freelancers, independent contractors, and consultants.
-          It provides 20 calculators covering every financial decision in the freelance lifecycle —
+          It provides {totalCalcs} calculators covering every financial decision in the freelance lifecycle —
           from setting your first rate to planning for retirement on irregular income.
         </p>
       </div>
